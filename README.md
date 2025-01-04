@@ -6,7 +6,7 @@
 ---
 |<img src="https://avatars.githubusercontent.com/u/179544856?v=4" width="150" height="150"/>|<img src="https://avatars.githubusercontent.com/u/114290855?v=4" width="150" height="150"/>|<img src="https://avatars.githubusercontent.com/u/121565744?v=4" width="150" height="150"/>|<img src="https://avatars.githubusercontent.com/u/55776421?v=4" width="150" height="150"/>|
 |:-:|:-:|:-:|:-:|
-|이은준<br/>[@adf123124](https://github.com/adf123124)|[@andytjdqls](https://github.com/andytjdqls)|@eundeom<br/>[@eundeom](https://github.com/eundeom)|SeulGi_LEE<br/>[@seulg2027](https://github.com/seulg2027)|
+|이은준<br/>[@2EunJun](https://github.com/adf123124)|[@andytjdqls](https://github.com/andytjdqls)|@eundeom<br/>[@eundeom](https://github.com/eundeom)|SeulGi_LEE<br/>[@seulg2027](https://github.com/seulg2027)|
 
 
 ### 💡 1/3  미션
