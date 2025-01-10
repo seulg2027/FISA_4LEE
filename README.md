@@ -1,7 +1,6 @@
 # FISA_4LEE
 우리FISA 4기 클라우드 엔지니어링 4LEE팀
 
-
 ### 팀원 🙆🏻‍♂️🙆🏻‍♀️
 ---
 |<img src="https://avatars.githubusercontent.com/u/179544856?v=4" width="150" height="150"/>|<img src="https://avatars.githubusercontent.com/u/114290855?v=4" width="150" height="150"/>|<img src="https://avatars.githubusercontent.com/u/121565744?v=4" width="150" height="150"/>|<img src="https://avatars.githubusercontent.com/u/55776421?v=4" width="150" height="150"/>|
@@ -12,22 +11,62 @@
 ⚙🔧🛠🛢🔗⛓
 ---
 <br><br>
-## 👝 프로젝트 이름
-| 간단한 설명
+### ✏ Git 규칙
+<div>
+  <pre>
+    <ul>
+        Feat ➕ : 새로운 기능을 추가할 경우
+        Fix 🛠️ : 버그를 고친 경우
+        Design 🎨 : CSS 등 사용자 UI 디자인 변경
+        Change 💎 : 커다란 API 변경의 경우
+        Style 👕 : 코드 포맷 변경, 세미 콜론 누락, 코드 수정이 없는 경우
+        Hotfix 🚨 : 급하게 치명적인 버그를 고쳐야 하는 경우
+        Refactor 🚧 : 프로덕션 코드 리팩토링
+        Comment ✉️ : 필요한 주석 추가 및 변경
+        Docs 📝 : 문서를 수정한 경우
+        Test 🔍 : 테스트 추가, 테스트 리팩토링 (프로덕션 코드 변경 X)
+        Chore 🚀 : 빌드 테스트 업데이트, 패키지 매니저를 설정하는 경우
+        Rename 📁 : 파일 혹은 폴더 명을 옮기는 작업만인 경우
+        Remove ❌ : 파일을 삭제하는 작업만 수행한 경우
+        Release 👏 : 프로젝트 배포할 경우
+    </ul></pre>
+</div>
+<br><br>
+
+## 👝 42가 좋아지길 바래... 
+| MVC 패턴의 구조와 생성에 대한 연습과 협업을 위한 미니 프로젝트
 
 ### ⚙ 전체적인 틀
 <b>∘ 목적</b>
-- blah
+- 최근 10년동안 어떠한 업종이 가장 많은 소비를 했는지 궁금함에서 시작하여, Spring Mvc패턴을 구성하고 연습하며 협업 경험을 쌓는 것에 의의을 둠.
 
 <b>∘ Oracle DB 를 사용한 이유 :</b><br>
 방대한 카드 소비 데이터와 같이 구조적이고 복잡한 데이터를 안정적으로 저장하고 조회
 높은 안정성과 신뢰도를 제공 -> 금융, 카드 소비와 같은 데이터 관리에 적합
 
 <b>∘ 주요 기능</b>
-- 기능1
-- 기능2
-- 기능3
+- 데이터 전처리 후, 데이터 자동 삽입
+- 테이블 조회
 
+### 🎈 트러블 슈팅
+  ❗ 문제 : 
+  📢 해결 : ALTER SYSTEM SET PROCESSES=200 SCOPE=spfile;
+
+
+### ⚙ 프로젝트 MVC 패턴 구조도
+![구조도](https://github.com/user-attachments/assets/bc08c783-1855-4d8c-800c-476dab62d890)
+
+### 📃 API 명세서
+<pre>
+  [조회]
+http://127.0.0.1:1521/api/getall
+[industry별 조회]
+http://127.0.0.1:1521/api/getall?industry=<>
+[기간별 조회]
+http://127.0.0.1:1521/api/getall?date=<>
+[생성]
+http://127.0.0.1:1521/api/create
+</pre>
 
 ### 🔧 기능 설명
 - 실행방법
@@ -39,21 +78,102 @@
   - Delete
 
 ### 🔗 사용스택
-| Slack   | React   | Oracle  | Git     | DBeaver | Spring  | Java    | Figma   |
-| ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- |
-| <img src="https://github.com/user-attachments/assets/e70bf1c8-8dbc-46c1-a6a9-18d6d843cbdf" width="40" height="40"/> | <img src="https://github.com/user-attachments/assets/aff0f203-760b-4e70-a76b-de189a0c2a91" width="40" height="40"/> | <img src="https://github.com/user-attachments/assets/66683b3c-7d61-4431-a9b5-36c73897cd26" width="40" height="40"/> | <img src="https://github.com/user-attachments/assets/71e1234d-9684-4c1e-8edb-de061dd036f0" width="40" height="40"/> | <img src="https://github.com/user-attachments/assets/7654a028-2074-428f-82ba-27132eba2d53" width="40" height="40"/> | <img src="https://github.com/user-attachments/assets/8a003289-bc6f-487a-918b-1ad7826d9153" width="40" height="40"/> | <img src="https://github.com/user-attachments/assets/51c9e7a6-8758-43c3-9c03-0329ed30f0c6" width="40" height="60"/> | <img src="https://github.com/user-attachments/assets/1440eb75-bd80-4801-b45b-3e2a7a25b28f" width="40" height="60"/> |
+
+| Front-end | Back-end |
+| :-------: | :------: |
+| React     | Java     |
+| <div style="text-align: center;"><img src="https://github.com/user-attachments/assets/aff0f203-760b-4e70-a76b-de189a0c2a91" width="40" height="40"/></div> | <div style="text-align: center;"><img src="https://github.com/user-attachments/assets/51c9e7a6-8758-43c3-9c03-0329ed30f0c6" width="40" height="40"/></div> |
+
+|    IDE    |           |
+| :-------: | :-------: |
+| DBeaver   | STS       |
+| <div style="text-align: center;"><img src="https://github.com/user-attachments/assets/7654a028-2074-428f-82ba-27132eba2d53" width="40" height="40"/></div> | <div style="text-align: center;"><img src="https://github.com/user-attachments/assets/8a003289-bc6f-487a-918b-1ad7826d9153" width="40" height="40"/></div> |
+
+|   협업툴  |           |           |
+| :-------: | :-------: | :-------: |
+| Git       | Slack     | Figma     |
+| <div style="text-align: center;"><img src="https://github.com/user-attachments/assets/71e1234d-9684-4c1e-8edb-de061dd036f0" width="40" height="40"/></div> | <div style="text-align: center;"><img src="https://github.com/user-attachments/assets/e70bf1c8-8dbc-46c1-a6a9-18d6d843cbdf" width="40" height="40"/></div> | <div style="text-align: center;"><img src="https://github.com/user-attachments/assets/1440eb75-bd80-4801-b45b-3e2a7a25b28f" width="40" height="40"/></div> |
 <br>
 
 ### 🛢 DDL 
-Table 소개
+<div>
+        <h3>1. 테이블 삭제</h3>
+        <pre>
+BEGIN
+    EXECUTE IMMEDIATE 'DROP TABLE card_consume CASCADE CONSTRAINTS';
+EXCEPTION
+    WHEN OTHERS THEN
+        NULL; -- 테이블이 없으면 예외를 무시
+END;</pre>
+    </div>
+
+<div>
+        <h3>2. 시퀀스 삭제</h3>
+        <pre>
+BEGIN
+    EXECUTE IMMEDIATE 'DROP SEQUENCE card_consume_seq';
+EXCEPTION
+    WHEN OTHERS THEN
+        NULL; -- 시퀀스가 없으면 예외를 무시
+END;</pre>
+</div>
+
+<div>
+        <h3>3. 트리거 삭제</h3>
+        <pre>
+BEGIN
+    EXECUTE IMMEDIATE 'DROP TRIGGER card_consume_trigger';
+EXCEPTION
+    WHEN OTHERS THEN
+        NULL; -- 트리거가 없으면 예외를 무시
+END;</pre>
+
+</div>
+
+<div>
+        <h3>4. 테이블 생성</h3>
+        <pre>
+CREATE TABLE card_consume (
+    id NUMBER PRIMARY KEY,               -- 자동 증가 ID [고유 값]
+    industry VARCHAR2(100) NOT NULL,     -- 업종
+    transaction_date DATE NOT NULL,      -- 기준 날짜
+    total_amount NUMBER NOT NULL,        -- 카드 이용 금액
+    time_line NUMBER NOT NULL,           -- 시간대 구분
+    usage_cnt NUMBER NOT NULL,           -- 카드 이용 횟수
+    register_date DATE NOT NULL          -- 등록 날짜
+);</pre>
+</div>
+
+<div>
+        <h3>5. 시퀀스 생성</h3>
+        <pre>
+CREATE SEQUENCE card_consume_seq
+START WITH 1
+INCREMENT BY 1;</pre>
+</div>
+
+<div>
+        <h3>6. 트리거 생성</h3>
+        <pre>
+CREATE OR REPLACE TRIGGER card_consume_trigger
+BEFORE INSERT ON card_consume
+FOR EACH ROW
+BEGIN
+    IF :NEW.id IS NULL THEN
+        SELECT card_consume_seq.NEXTVAL
+        INTO :NEW.id
+        FROM dual;
+    END IF;
+END;</pre>
+</div>
+<br><br>
 
 ### ⛓ 데이터 전처리 과정
-
-
-
-
-
-
+<div>
+  <pre>
+    String 타입으로 데이터 전체가 선언되어 있어서, 이를 한 라인의 한 단어씩 나누어서 DB에 데이터를 입력하였습니다.
+  </pre>
+</div>
 
 
 
