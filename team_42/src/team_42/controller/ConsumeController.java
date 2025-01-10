@@ -1,7 +1,5 @@
 package team_42.controller;
 
-
-
 public class ConsumeController {
 
 	public void startApplication() {
