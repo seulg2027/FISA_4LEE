@@ -11,9 +11,11 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Properties;
 
+import org.junit.Test;
+
 public class DriverUtil {
 
-static Properties p = new Properties();
+	static Properties p = new Properties();
 	
 	static {
 		try {
@@ -25,7 +27,7 @@ static Properties p = new Properties();
 			e.printStackTrace();
 		}
 	}
-
+	
 	public static Connection getConnection() throws SQLException {
 		return DriverManager.getConnection(p.getProperty("jdbc.url"), 
 											p.getProperty("jdbc.id"),
@@ -65,5 +67,5 @@ static Properties p = new Properties();
 			s.printStackTrace();
 		}
 	}
-
+	
 }

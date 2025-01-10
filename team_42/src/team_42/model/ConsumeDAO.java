@@ -15,7 +15,7 @@ import team_42.model.util.DriverUtil;
 public class ConsumeDAO {
 
     // 'Create' 기능
-    public static boolean createRecord(String id, String industry, Date transactionDate, int totalAmount, int timeLine, int usageCnt, Date registerDate) throws SQLException {
+    public static boolean createRecord(ConsumeDTO consumeDto) throws SQLException {
         Connection con = null;
         PreparedStatement pstmt = null;
 
@@ -24,13 +24,13 @@ public class ConsumeDAO {
             String sql = "INSERT INTO card_consume (id, industry, transaction_date, total_amount, time_line, usage_cnt, register_date) VALUES (?, ?, ?, ?, ?, ?, ?)";
             pstmt = con.prepareStatement(sql);
 
-            pstmt.setString(1, id); 
-            pstmt.setString(2, industry); 
-            pstmt.setDate(3, transactionDate); 
-            pstmt.setInt(4, totalAmount); 
-            pstmt.setInt(5, timeLine); 
-            pstmt.setInt(6, usageCnt); 
-            pstmt.setDate(7, registerDate); 
+            pstmt.setString(1, consumeDto.getId()); 
+            pstmt.setString(2, consumeDto.getIndustry()); 
+            pstmt.setDate(3, consumeDto.getTransactionDate());
+            pstmt.setDouble(4, consumeDto.getTotalAmount()); 
+            pstmt.setInt(5, consumeDto.getTimeLine()); 
+            pstmt.setInt(6, consumeDto.getUsageCnt()); 
+            pstmt.setDate(7, consumeDto.getRegisterDate()); 
 
             int result = pstmt.executeUpdate();
             return result == 1; 
@@ -57,7 +57,7 @@ public class ConsumeDAO {
                     rs.getString("id"), 
                     rs.getString("industry"), 
                     rs.getDate("transaction_date"), 
-                    rs.getInt("total_amount"), 
+                    rs.getDouble("total_amount"), 
                     rs.getInt("time_line"), 
                     rs.getInt("usage_cnt"), 
                     rs.getDate("register_date") 
