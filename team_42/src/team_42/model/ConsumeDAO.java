@@ -57,7 +57,7 @@ public class ConsumeDAO {
                     rs.getString("id"), 
                     rs.getString("industry"), 
                     rs.getDate("transaction_date"), 
-                    rs.getInt("total_amount"), 
+                    rs.getDouble("total_amount"), 
                     rs.getInt("time_line"), 
                     rs.getInt("usage_cnt"), 
                     rs.getDate("register_date") 
@@ -80,9 +80,9 @@ public class ConsumeDAO {
             pstmt = con.prepareStatement(sql);
 
             pstmt.setString(1, industry); 
-            pstmt.setInt(2, totalAmount); 
+            pstmt.setDouble(2, totalAmount); 
             pstmt.setInt(3, timeLine); 
-            pstmt.setInt(4, usageCnt); 
+            pstmt.setInt(4, usageCnt);
             pstmt.setDate(5, registerDate); 
             pstmt.setString(6, id); 
 

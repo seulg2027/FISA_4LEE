@@ -51,7 +51,7 @@ public class ExcelFileInputUtil {
 				consumeDto.setTotalAmount(totalAmount);
 				consumeDto.setUsageCnt(usageCnt);
 				consumeDto.setRegisterDate(Date.valueOf(registerDate));
-
+				
 				System.out.println(consumeDto.toString());
 				
 				ConsumeDAO.createRecord(consumeDto);
