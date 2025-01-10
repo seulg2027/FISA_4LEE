@@ -1,4 +1,4 @@
-package team_42.model.util;
+package main.team_42.model.util;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -13,8 +13,8 @@ import java.util.List;
 
 import org.junit.Test;
 
-import team_42.model.ConsumeDAO;
-import team_42.model.dto.ConsumeDTO;
+import main.team_42.model.ConsumeDAO;
+import main.team_42.model.dto.ConsumeDTO;
 
 
 public class ExcelFileInputUtil {

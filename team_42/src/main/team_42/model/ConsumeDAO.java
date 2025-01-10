@@ -1,4 +1,4 @@
-package team_42.model;
+package main.team_42.model;
 
 //?
 import java.sql.Connection;
@@ -9,8 +9,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import team_42.model.dto.ConsumeDTO;
-import team_42.model.util.DriverUtil;
+import main.team_42.model.dto.ConsumeDTO;
+import main.team_42.model.util.DriverUtil;
 
 public class ConsumeDAO {
 

@@ -1,6 +1,6 @@
 //oracle 드라이버 관련 유틸리티
 
-package team_42.model.util;
+package main.team_42.model.util;
 
 import java.io.FileInputStream;
 import java.io.IOException;

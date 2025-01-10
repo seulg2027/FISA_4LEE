@@ -1,4 +1,4 @@
-package team_42.model.dto;
+package main.team_42.model.dto;
 
 import java.sql.Date;
 
