@@ -1,11 +1,26 @@
 -- 테이블 삭제
 BEGIN
-    EXECUTE IMMEDIATE 'DROP TABLE card_consume';
+    EXECUTE IMMEDIATE 'DROP TABLE card_consume CASCADE CONSTRAINTS';
 EXCEPTION
     WHEN OTHERS THEN
         NULL; -- 테이블이 없으면 예외를 무시
 END;
-/
+
+-- 시퀀스 삭제
+BEGIN
+    EXECUTE IMMEDIATE 'DROP SEQUENCE card_consume_seq';
+EXCEPTION
+    WHEN OTHERS THEN
+        NULL; -- 시퀀스가 없으면 예외를 무시
+END;
+
+-- 트리거 삭제
+BEGIN
+    EXECUTE IMMEDIATE 'DROP TRIGGER card_consume_trigger';
+EXCEPTION
+    WHEN OTHERS THEN
+        NULL; -- 트리거가 없으면 예외를 무시
+END;
 
 -- 테이블 생성
 CREATE TABLE card_consume (
@@ -15,14 +30,13 @@ CREATE TABLE card_consume (
     total_amount NUMBER NOT NULL,        -- 총 소비 금액
     time_line NUMBER NOT NULL,           -- 시간 구분 (예: 오전, 오후 등)
     usage_cnt NUMBER NOT NULL,           -- 사용 횟수
-    register_date DATE DEFAULT SYSDATE   -- 등록 날짜 (기본값: 현재 날짜)
+    register_date DATE NOT NULL          -- 등록 날짜 (형식만 날짜)
 );
 
--- 시퀀스 생성
+-- 시퀀스 생성 (CACHE 및 NOCACHE 옵션 제거)
 CREATE SEQUENCE card_consume_seq
 START WITH 1
-INCREMENT BY 1
-CACHE 20;
+INCREMENT BY 1;
 
 -- 트리거 생성
 CREATE OR REPLACE TRIGGER card_consume_trigger
@@ -36,4 +50,3 @@ BEGIN
         FROM dual;
     END IF;
 END;
-/
