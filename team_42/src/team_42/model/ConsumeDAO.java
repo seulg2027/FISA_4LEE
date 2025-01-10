@@ -69,8 +69,8 @@ public class ConsumeDAO {
         return records; 
     }
 
-    // 'Update' 기능
-    public static boolean updateRecord(String id, String industry, int totalAmount, int timeLine, int usageCnt, Date registerDate) throws SQLException {
+ // 'Update' 기능
+    public static boolean updateRecord(ConsumeDTO consumeDto) throws SQLException {
         Connection con = null;
         PreparedStatement pstmt = null;
 
@@ -79,17 +79,18 @@ public class ConsumeDAO {
             String sql = "UPDATE card_consume SET industry = ?, total_amount = ?, time_line = ?, usage_cnt = ?, register_date = ? WHERE id = ?";
             pstmt = con.prepareStatement(sql);
 
-            pstmt.setString(1, industry); 
-            pstmt.setDouble(2, totalAmount); 
-            pstmt.setInt(3, timeLine); 
-            pstmt.setInt(4, usageCnt);
-            pstmt.setDate(5, registerDate); 
-            pstmt.setString(6, id); 
+            pstmt.setString(1, consumeDto.getIndustry()); 
+            pstmt.setDouble(2, consumeDto.getTotalAmount());
+            pstmt.setInt(3, consumeDto.getTimeLine()); 
+            pstmt.setInt(4, consumeDto.getUsageCnt());
+            pstmt.setDate(5, consumeDto.getRegisterDate()); 
+            pstmt.setString(6, consumeDto.getId());
+//          pstmt.setDate(7, consumeDto.getTransactionDate());
 
             int result = pstmt.executeUpdate();
             return result == 1; 
         } finally {
-        	DriverUtil.close(con, pstmt); 
+            DriverUtil.close(con, pstmt); 
         }
     }
 
