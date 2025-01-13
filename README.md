@@ -35,8 +35,9 @@
 
 ## 👝 42가 좋아지길 바래... 
 | MVC 패턴의 구조와 생성에 대한 연습과 협업을 위한 미니 프로젝트
-
+<br><br>
 ### ⚙ 전체적인 틀
+---
 <b>∘ 목적</b>
 - 최근 10년동안 어떠한 업종이 가장 많은 소비를 했는지 궁금함에서 시작하여, Spring Mvc패턴을 구성하고 연습하며 협업 경험을 쌓는 것에 의의을 둠.
 
@@ -47,16 +48,25 @@
 <b>∘ 주요 기능</b>
 - 데이터 전처리 후, 데이터 자동 삽입
 - 테이블 조회
+<br>
 
-### 🎈 트러블 슈팅
-  ❗ 문제 : 
-  📢 해결 : ALTER SYSTEM SET PROCESSES=200 SCOPE=spfile;
+### 🎈 트러블 슈팅 
+---
+  #### ❗ 문제 : ![image](https://github.com/user-attachments/assets/bfcc1070-b6c6-48ed-8f1e-b2be9e57be47)
+  Oracle DB에서 프로세스 제한으로 인해 데이터 삽입 및 조회 실패
+  #### 📢 해결 : 
+  ALTER SYSTEM SET PROCESSES=200 SCOPE=spfile; 명령어로 프로세스 제한 증가
+  #### 🎓 결과 및 교훈: 
+  데이터베이스 설정과 리소스 관리의 중요성을 깨달음
 
-
+<br><br>
 ### ⚙ 프로젝트 MVC 패턴 구조도
+---
 ![구조도](https://github.com/user-attachments/assets/bc08c783-1855-4d8c-800c-476dab62d890)
 
+<br><br>
 ### 📃 API 명세서
+---
 <pre>
   [조회]
 http://127.0.0.1:1521/api/getall
@@ -69,6 +79,7 @@ http://127.0.0.1:1521/api/create
 </pre>
 
 ### 🔧 기능 설명
+---
 - 실행방법
   
 - CRUD
@@ -78,7 +89,7 @@ http://127.0.0.1:1521/api/create
   - Delete
 
 ### 🔗 사용스택
-
+---
 | Front-end | Back-end |
 | :-------: | :------: |
 | React     | Java     |
@@ -96,9 +107,11 @@ http://127.0.0.1:1521/api/create
 <br>
 
 ### 🛢 DDL 
+---
 <div>
         <h3>1. 테이블 삭제</h3>
         <pre>
+목적: 기존에 생성된 card_consume 테이블을 삭제
 BEGIN
     EXECUTE IMMEDIATE 'DROP TABLE card_consume CASCADE CONSTRAINTS';
 EXCEPTION
@@ -169,6 +182,7 @@ END;</pre>
 <br><br>
 
 ### ⛓ 데이터 전처리 과정
+---
 <div>
   <pre>
     String 타입으로 데이터 전체가 선언되어 있어서, 이를 한 라인의 한 단어씩 나누어서 DB에 데이터를 입력하였습니다.
