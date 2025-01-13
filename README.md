@@ -1,20 +1,18 @@
 # FISA_4LEE
 우리FISA 4기 클라우드 엔지니어링 4LEE팀
 
+---
+[수정] -> 피드백 및 자유 작성
+[작성] -> 직접 작성하는 부분
+
 ### 팀원 🙆🏻‍♂️🙆🏻‍♀️
 ---
 |<img src="https://avatars.githubusercontent.com/u/179544856?v=4" width="150" height="150"/>|<img src="https://avatars.githubusercontent.com/u/114290855?v=4" width="150" height="150"/>|<img src="https://avatars.githubusercontent.com/u/121565744?v=4" width="150" height="150"/>|<img src="https://avatars.githubusercontent.com/u/55776421?v=4" width="150" height="150"/>|
 |:-:|:-:|:-:|:-:|
 |이은준<br/>[@2EunJun](https://github.com/adf123124)|[@andytjdqls](https://github.com/andytjdqls)|@eundeom<br/>[@eundeom](https://github.com/eundeom)|SeulGi_LEE<br/>[@seulg2027](https://github.com/seulg2027)|
 
-<br><br>
-⚙🔧🛠🛢🔗⛓
----
-<br><br>
 ### ✏ Git 규칙
-<div>
-  <pre>
-    <ul>
+<div><pre><ul>
         Feat ➕ : 새로운 기능을 추가할 경우
         Fix 🛠️ : 버그를 고친 경우
         Design 🎨 : CSS 등 사용자 UI 디자인 변경
@@ -29,14 +27,13 @@
         Rename 📁 : 파일 혹은 폴더 명을 옮기는 작업만인 경우
         Remove ❌ : 파일을 삭제하는 작업만 수행한 경우
         Release 👏 : 프로젝트 배포할 경우
-    </ul></pre>
-</div>
-<br><br>
+    </ul></pre></div>
+<br>
 
-## 👝 42가 좋아지길 바래... 
+## 👝 프로젝트 : 42가 좋아지길 바래... [수정]
 | MVC 패턴의 구조와 생성에 대한 연습과 협업을 위한 미니 프로젝트
 <br><br>
-### ⚙ 전체적인 틀
+### ⚙ 전체적인 틀 [수정]
 ---
 <b>∘ 목적</b>
 - 최근 10년동안 어떠한 업종이 가장 많은 소비를 했는지 궁금함에서 시작하여, Spring Mvc패턴을 구성하고 연습하며 협업 경험을 쌓는 것에 의의을 둠.
@@ -50,7 +47,7 @@
 - 테이블 조회
 <br>
 
-### 🎈 트러블 슈팅 
+### 🎈 트러블 슈팅 [작성]
 ---
   #### ❗ 문제 : ![image](https://github.com/user-attachments/assets/bfcc1070-b6c6-48ed-8f1e-b2be9e57be47)
   Oracle DB에서 프로세스 제한으로 인해 데이터 삽입 및 조회 실패
@@ -59,13 +56,18 @@
   #### 🎓 결과 및 교훈: 
   데이터베이스 설정과 리소스 관리의 중요성을 깨달음
 
+  ### axios 통신문제
+  #### ❗ 문제 : 
+  #### 📢 해결 :
+  #### 🎓 결과 및 교훈: 
+  
 <br><br>
 ### ⚙ 프로젝트 MVC 패턴 구조도
 ---
 ![구조도](https://github.com/user-attachments/assets/bc08c783-1855-4d8c-800c-476dab62d890)
 
 <br><br>
-### 📃 API 명세서
+### 📃 API 명세서 [수정]
 ---
 <pre>
   [조회]
@@ -78,9 +80,11 @@ http://127.0.0.1:1521/api/getall?date=<>
 http://127.0.0.1:1521/api/create
 </pre>
 
-### 🔧 기능 설명
+### 🔧 기능 설명 [수정]
 ---
-- 실행방법
+- 실행방법:
+          1.
+          2. 
   
 - CRUD
   - Create
@@ -106,7 +110,7 @@ http://127.0.0.1:1521/api/create
 | <div style="text-align: center;"><img src="https://github.com/user-attachments/assets/71e1234d-9684-4c1e-8edb-de061dd036f0" width="40" height="40"/></div> | <div style="text-align: center;"><img src="https://github.com/user-attachments/assets/e70bf1c8-8dbc-46c1-a6a9-18d6d843cbdf" width="40" height="40"/></div> | <div style="text-align: center;"><img src="https://github.com/user-attachments/assets/1440eb75-bd80-4801-b45b-3e2a7a25b28f" width="40" height="40"/></div> |
 <br>
 
-### 🛢 DDL 
+### 🛢 DDL  [수정]
 ---
 <div>
         <h3>1. 테이블 삭제</h3>
@@ -181,7 +185,7 @@ END;</pre>
 </div>
 <br><br>
 
-### ⛓ 데이터 전처리 과정
+### ⛓ 데이터 전처리 과정 [수정]
 ---
 <div>
   <pre>
@@ -189,9 +193,16 @@ END;</pre>
   </pre>
 </div>
 
-
-
+### ☕ 프로젝트 회고 [작성]
+<pre>이은준</pre>
+<pre>이슬기</pre>
+<pre>이성빈</pre>
+<pre>이은정</pre>
 <br><br>
+
+### ⏱ 코드 최적화 [수정]
+<div><pre></pre></div>
+
 <br><br>
 ### 💡 1/3  미션
 <details>
