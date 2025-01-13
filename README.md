@@ -114,7 +114,7 @@ http://127.0.0.1:1521/api/create
 ## ERD
 <br>
 
-![화면 캡처 2025-01-13 182701](https://github.com/user-attachments/assets/f973fd7c-0bdf-493f-8af7-2b54dab5f179)
+<img src="https://github.com/user-attachments/assets/f973fd7c-0bdf-493f-8af7-2b54dab5f179" width="300" />
 
 
 <br>
@@ -122,7 +122,7 @@ http://127.0.0.1:1521/api/create
 ## Table
   <br>
 
-![Table](https://github.com/user-attachments/assets/0a48eedd-3cf8-49f1-9afe-3ccfe2579c56)
+<img src="https://github.com/user-attachments/assets/0a48eedd-3cf8-49f1-9afe-3ccfe2579c56" width="600"/>
 
 <br>
 
@@ -213,7 +213,7 @@ END;
 <div>
 모든 데이터가 문자열 형태로 되어있어, 각 라인을 단어 단위로 토큰화하여 데이터베이스에 적재하는 로직을 구현했습니다. <br/><br/>
 
-![image](/img/visual_file_data_process.png)
+<img src="/img/visual_file_data_process.png" width="700" />
 
 <pre>
 1. 파일 읽기 및 인코딩 처리
@@ -239,7 +239,8 @@ DB에 적합한 Date 타입으로 변환합니다.
 
 
 ### [☕ 프로젝트 회고 [작성중]](#목차)
-![_- visual selection](https://github.com/user-attachments/assets/94e2831f-7798-41df-92a5-faa3a9d03283)
+
+<img src="https://github.com/user-attachments/assets/94e2831f-7798-41df-92a5-faa3a9d03283" width="700" />
 
 <details>
 <summary><b>이은준</b></summary>
@@ -314,27 +315,35 @@ Spring 코드 작성에 대한 이해도가 높아졌으며, Git 사용에 익�
 ### [⏱ 코드 최적화 [작성중]](#목차)
 #### 1. DAO (create) 의미 명확성 부족 ,확장성 부족<br/>
 
-![지적-a2](https://github.com/user-attachments/assets/9a6e8410-8987-4c0d-b080-c2f846b95b20)
-![해결-a](https://github.com/user-attachments/assets/5c0d6fd1-56e6-4eb7-970b-5c64a8918abc)
+<img src="https://github.com/user-attachments/assets/9a6e8410-8987-4c0d-b080-c2f846b95b20" width="370">
+<img src="https://github.com/user-attachments/assets/5c0d6fd1-56e6-4eb7-970b-5c64a8918abc" width="370">
+
+<br>
+
 > 가독성을 향상, 디버깅 및 유지보수 용이, 후속작업에 대한 유연성
+
+<br>
 
 #### 2. DAO (read) 코드의 맥락과 변수를 어디에서 초기화하는지 고려<br/>
 
-![지적-b](https://github.com/user-attachments/assets/d4740e64-3100-425b-a1af-b00646d11e72)
+<img src="https://github.com/user-attachments/assets/d4740e64-3100-425b-a1af-b00646d11e72" width="350"> <img src="/img/해결-b.png" width="370">
 
-![image](/img/해결-b.png)
+<br>
+
 > 초기화된 빈 리스트와 null을 명확히 구분하여 반환값을 처리하는 로직에서 상황을 명확히 구분하고 대응
 
 <br/>
 
 #### 3. Controller 예외 핸들링 중복 로직 분리
 
-![image](/img/before_update_controller.png)
+<img src="/img/before_update_controller.png" height="300">
 > Controller에서 중복되는 `try~catch` 코드를 사용하여, 가독성이 떨어지고 중복 코드 발생
 
-![image](/img/after_update_controller.png)
-![image](/img/after_update_exceptionhandler.png)
+<img src="/img/after_update_controller.png" height="200">
+<img src="/img/after_update_exceptionhandler.png" height="120">
+
 > @ExceptionHandler 를 통해 예외를 처리하는 로직을 분리 <br>
+
  **가독성이 향상되고, 중복 코드를 줄여서** 코드를 최적화
 
 </div>
