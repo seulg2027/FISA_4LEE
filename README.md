@@ -89,16 +89,15 @@ http://127.0.0.1:1521/api/create
 | :-------: | :-------: |
 | ![select all](https://github.com/user-attachments/assets/023478f5-73a7-4097-b924-8dfd52d3af08) | ![select industry](https://github.com/user-attachments/assets/84dfb12f-c0b4-480c-9a46-58140fbeac5a) |
 
-|       생성    |      |
+|       생성    |   생성 확인   |
 | :-------: | :-------: |
-| ![insert](https://github.com/user-attachments/assets/295b6989-1c3d-41c0-b198-484916e7e296)
-  | ![check insert](https://github.com/user-attachments/assets/ccbde352-628b-4f33-ad48-725ec975ed21) |
+| ![insert](https://github.com/user-attachments/assets/295b6989-1c3d-41c0-b198-484916e7e296) | ![check insert](https://github.com/user-attachments/assets/ccbde352-628b-4f33-ad48-725ec975ed21) |
 
 
-|     삭제      | |
+|     삭제      |  삭제 확인   |
 | :-------: | :-------: |
-| ![delete](https://github.com/user-attachments/assets/e1543c50-bff5-4980-8597-44ca96fd822d) |
-![check delete](https://github.com/user-attachments/assets/291a4e36-d86a-4cf6-8aba-6e537f7ad110)|
+| ![delete](https://github.com/user-attachments/assets/e1543c50-bff5-4980-8597-44ca96fd822d) | ![check delete](https://github.com/user-attachments/assets/291a4e36-d86a-4cf6-8aba-6e537f7ad110)|
+
 
 
 ### [🔗 사용스택](#목차)
