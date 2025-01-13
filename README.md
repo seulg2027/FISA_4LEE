@@ -33,9 +33,10 @@
 
 <b>∘ 데이터 </b>
 - 전처리의 필요성
+  - 
 
 - 의미
-  - 
+  - 소비자들이 하루 중 어떤 시간대에 더 많은 카드를 사용하고 소비하는지를 분석하는 데이터로 시간대 별로 카드를 사용하는 패턴과 소비 트렌드를 분석하여, 소비 동향을 파악하는 데 사용됩니다.
 - [출처](https://bigdata.seoul.go.kr/data/selectSampleData.do?r_id=P213&sample_data_seq=318)
 
 <b>∘ RDBMS Oracle DB를 선택한 이유 :</b><br>
@@ -116,7 +117,20 @@ http://127.0.0.1:1521/api/create
 
 ### [🛢 Schema](#목차)
 ---
-![image](/img/Schema_team42.png)
+## ERD
+<br>
+
+![화면 캡처 2025-01-13 182701](https://github.com/user-attachments/assets/f973fd7c-0bdf-493f-8af7-2b54dab5f179)
+
+
+<br>
+
+## Table
+  <br>
+
+![Table](https://github.com/user-attachments/assets/0a48eedd-3cf8-49f1-9afe-3ccfe2579c56)
+
+<br>
 
 <div>
         <h3>1. 테이블 삭제</h3>
