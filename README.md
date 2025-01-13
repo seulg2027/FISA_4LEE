@@ -194,7 +194,7 @@ END;
 </div>
 <br><br>
 
-### ⛓ 데이터 전처리 과정 [수정]
+### ⛓ 데이터 전처리 과정
 ---
 <div>
 전체 데이터가 String 타입으로 선언되어 있어, 데이터를 한 라인의 단어 단위로 분리한 후, 이를 데이터베이스(DB)에 입력하는 과정을 구현하였습니다.
@@ -202,27 +202,32 @@ END;
 1. 파일 읽기 및 인코딩 처리
 CSV 파일을 BufferedReader를 사용하여 한 줄씩 읽어옵니다.
 파일 인코딩은 "EUC-KR"로 설정하여 한글 데이터 처리를 지원합니다.
+        <br>
 2. 데이터 파싱 및 변환
 데이터를 CSV의 각 필드로 분리하기 위해 정규식을 사용하여 split 메서드를 활용하였습니다.
 분리된 데이터를 필요에 따라 String, int, double 등의 적합한 데이터 타입으로 변환합니다.
+        <br>
 3. 날짜 변환
-String 형태로 제공된 날짜 데이터를 DateTimeFormatter와 LocalDate를 사용해 yyyyMMdd 형식으로 파싱하고, DB에 적합한 Date 타입으로 변환합니다.
+String 형태로 제공된 날짜 데이터를 DateTimeFormatter와 LocalDate를 사용해 yyyyMMdd 형식으로 파싱하고, 
+DB에 적합한 Date 타입으로 변환합니다.
+        <br>
 4.DTO 객체 생성 및 데이터 매핑
 파싱한 데이터를 ConsumeDTO 객체의 각 필드에 설정합니다.
 생성된 DTO는 DAO(Data Access Object)를 통해 DB에 삽입됩니다.
+        <br>
 5.DB 레코드 생성
 데이터는 ConsumeDAO.createRecord() 메서드를 호출하여 DB에 저장됩니다.
 </pre>
 </div>
 
-### ☕ 프로젝트 회고 [작성]
+### ☕ 프로젝트 회고 [작성중]
 <pre>이은준</pre>
 <pre>이슬기</pre>
 <pre>이성빈</pre>
 <pre>이은정</pre>
 <br><br>
 
-### ⏱ 코드 최적화 [수정]
+### ⏱ 코드 최적화 [작성중]
 <div><pre></pre></div>
 
 <br><br>
