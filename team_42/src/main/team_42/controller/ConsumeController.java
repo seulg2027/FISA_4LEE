@@ -20,9 +20,14 @@ public class ConsumeController {
 	 * 모든 데이터 조회
 	 */
 	@GetMapping("/getall")
-	public ResponseEntity getAllCardConsume(@RequestBody String req) throws SQLException {
-		List<ConsumeDTO> list = ConsumeDAO.readAllRecords();
-		System.out.println(req);
+	public ResponseEntity<?> getAllCardConsume(@RequestParam(required=false) String industry
+											 , @RequestParam(required=false) String date) {
+		List<ConsumeDTO> list = null;
+		try {
+			list = ConsumeDAO.readAllRecords();
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
 		return new ResponseEntity<>(list, HttpStatus.OK);
 	}
 	
@@ -30,8 +35,13 @@ public class ConsumeController {
 	 * 생성
 	 */
 	@PostMapping("/create")
-	public ResponseEntity getCategoryCardConsume(@RequestParam ConsumeDTO consumeDto) throws Exception {
-		boolean result = ConsumeDAO.createRecord(consumeDto);
+	public ResponseEntity<?> getCategoryCardConsume(@RequestBody(required=true) ConsumeDTO consumeDto) {
+		boolean result = false;
+		try {
+			result = ConsumeDAO.createRecord(consumeDto);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
 		
 		return new ResponseEntity<>(result, HttpStatus.OK);
 	}
