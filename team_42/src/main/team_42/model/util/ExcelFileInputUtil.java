@@ -19,14 +19,6 @@ import main.team_42.model.dto.ConsumeDTO;
 
 
 public class ExcelFileInputUtil {
-	
-	private final ConsumeDAO consumeDao;
-	
-	@Autowired
-	ExcelFileInputUtil(ConsumeDAO consumeDao) {
-		this.consumeDao = consumeDao;
-	}
-	
 	// 파일 읽어오기
 	@Test
 	public void readCSV() {
@@ -62,7 +54,7 @@ public class ExcelFileInputUtil {
 				
 				System.out.println(consumeDto.toString());
 				
-				consumeDao.createRecord(consumeDto);
+				ConsumeDAO.createRecord(consumeDto);
 				
 				//System.out.println(aLine);
 			}
