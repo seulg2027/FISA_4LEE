@@ -5,7 +5,9 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -21,14 +23,10 @@ public class ConsumeController {
 	 * 모든 데이터 조회
 	 */
 	@GetMapping("/getall")
-	public ResponseEntity<?> getAllCardConsume(@RequestParam(required=false) Map<String, String> req) {
+	public ResponseEntity<?> getAllCardConsume(@RequestParam(required=false) Map<String, String> req) throws SQLException {
 		List<ConsumeDTO> list = null;
-		try {
-			String params = RequestUtil.getParams(req);
-			list = ConsumeDAO.readAllRecords(params);
-		} catch (SQLException e) {
-			System.out.println(e.getMessage());
-		}
+		String params = RequestUtil.getParams(req);
+		list = ConsumeDAO.readAllRecords(params);
 		return new ResponseEntity<>(list, HttpStatus.OK);
 	}
 	
@@ -36,16 +34,10 @@ public class ConsumeController {
 	 * 생성
 	 */
 	@PostMapping("/create")
-	public ResponseEntity<?> getCategoryCardConsume(@RequestParam(required=true) Map<String, String> req) {
+	public ResponseEntity<?> getCategoryCardConsume(@RequestParam(required=true) Map<String, String> req) throws Exception{
 		boolean result = false;
-		try {
-			ConsumeDTO consumeDto = RequestUtil.getConsumeDTO(req);
-			result = ConsumeDAO.createRecord(consumeDto);
-		} catch (Exception e) {
-			e.printStackTrace();
-			System.out.println(e.getMessage());
-		}
-		
+		ConsumeDTO consumeDto = RequestUtil.getConsumeDTO(req);
+		result = ConsumeDAO.createRecord(consumeDto);
 		return new ResponseEntity<>(result, HttpStatus.OK);
 	}
 	
@@ -53,14 +45,19 @@ public class ConsumeController {
 	 * 삭제
 	 */
 	@PostMapping("/delete")
-	public ResponseEntity<?> delCategoryCardConsume(@RequestParam(required=true) String id) {
+	public ResponseEntity<?> delCategoryCardConsume(@RequestParam(required=true) String id) throws Exception{
 		boolean result = false;
-		try {
-			result = ConsumeDAO.deleteRecord(id);
-		} catch (Exception e) {
-			System.out.println(e.getMessage());
-		}
-		
+		result = ConsumeDAO.deleteRecord(id);
 		return new ResponseEntity<>(result, HttpStatus.OK);
+	}
+	
+	@ExceptionHandler(SQLException.class)
+	public ResponseEntity<String> handleSQLException(SQLException e) {
+		return ResponseEntity.status(HttpStatus.SERVICE_UNAVAILABLE).body(e.getMessage());
+	}
+	
+	@ExceptionHandler(Exception.class)
+	public ResponseEntity<String> handleRuntimeException(Exception e) {
+		return ResponseEntity.status(HttpStatus.BAD_GATEWAY).body(e.getMessage());
 	}
 }

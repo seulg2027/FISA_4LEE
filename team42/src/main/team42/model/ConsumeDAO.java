@@ -54,9 +54,15 @@ public class ConsumeDAO {
 			rs = pstmt.executeQuery();
 			records = new ArrayList<>();
 			while (rs.next()) {
-				records.add(new ConsumeDTO(rs.getString("id"), rs.getString("industry"), rs.getDate("transaction_date"),
-						rs.getDouble("total_amount"), rs.getInt("time_line"), rs.getInt("usage_cnt"),
-						rs.getDate("register_date")));
+				records.add(new ConsumeDTO(
+						rs.getString("id"), 
+						rs.getString("industry"), 
+						rs.getDate("transaction_date"),
+						rs.getDouble("total_amount"), 
+						rs.getInt("time_line"), 
+						rs.getInt("usage_cnt"),
+						rs.getDate("register_date")
+				));
 			}
 		} finally {
 			DriverUtil.close(con, pstmt, rs);
