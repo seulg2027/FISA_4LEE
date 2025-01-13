@@ -11,9 +11,4 @@ public class Team42Application {
 	public static void main(String[] args) {
 		SpringApplication.run(Team42Application.class, args);
 	}
-	
-	@GetMapping("/")
-	public String helloWorld(){
-		return "helloWorld";
-	}
 }
