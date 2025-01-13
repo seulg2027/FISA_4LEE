@@ -1,44 +1,44 @@
 # 목차
+1. [🙆🏻‍♂️ 팀원](#%EF%B8%8F-팀원)
+2. [👝 프로젝트 : 42가 좋아지길 바래](#-프로젝트--42가-좋아지길-바래)
+4. [🎈 트러블 슈팅](#-트러블-슈팅-작성)
+5. [⚙ 프로젝트 MVC 패턴 구조도](#-프로젝트-mvc-패턴-구조도)
+6. [📃 API 명세서](#-api-명세서)
+7. [🔧 기능 설명](#-기능-설명-수정)
+8. [🔗 사용 스택](#-사용스택)
+9. [🛢 Schema](#-schema)
+10. [⛓ 데이터 전처리 과정](#-데이터-전처리-과정)
+11. [☕ 프로젝트 회고](#-프로젝트-회고-작성중)
+12. [⏱ 코드 최적화](#-코드-최적화-작성중)
+13. [✏ Git 규칙](#-git-규칙)
+14. [💡 1/3 미션](#-13--미션)
 
-- [🙆🏻‍♂️🙆🏻‍♀️ 팀원](#%EF%B8%8F%EF%B8%8F-팀원)
-- [👝 프로젝트 : 42가 좋아지길 바래](#-프로젝트--42가-좋아지길-바래)
-- [⚙ 전체적인 틀](#-전체적인-틀)
-- [🎈 트러블 슈팅](#-트러블-슈팅-작성)
-- [⚙ 프로젝트 MVC 패턴 구조도](#-프로젝트-mvc-패턴-구조도)
-- [📃 API 명세서](#-api-명세서)
-- [🔧 기능 설명](#-기능-설명-수정)
-- [🔗 사용 스택](#-사용스택)
-- [🛢 DDL](#-ddl)
-- [⛓ 데이터 전처리 과정](#-데이터-전처리-과정)
-- [☕ 프로젝트 회고](#-프로젝트-회고-작성중)
-- [⏱ 코드 최적화](#-코드-최적화-작성중)
-- [✏ Git 규칙](#-git-규칙)
-- [💡 1/3 미션](#-13--미션)
-
-# FISA_4LEE
+# 팀명 : FISA_4LEE
 우리FISA 4기 클라우드 엔지니어링 4LEE팀
 
 ---
-[수정] -> 피드백 및 자유 작성
-[작성] -> 직접 작성하는 부분
 
-### [🙆🏻‍♂️🙆🏻‍♀️ 팀원](#목차)
+### [🙆🏻‍♂️ 팀원](#목차)
 ---
 |<img src="https://avatars.githubusercontent.com/u/179544856?v=4" width="150" height="150"/>|<img src="https://avatars.githubusercontent.com/u/114290855?v=4" width="150" height="150"/>|<img src="https://avatars.githubusercontent.com/u/121565744?v=4" width="150" height="150"/>|<img src="https://avatars.githubusercontent.com/u/55776421?v=4" width="150" height="150"/>|
 |:-:|:-:|:-:|:-:|
 |이은준<br/>[@2EunJun](https://github.com/adf123124)|[@andytjdqls](https://github.com/andytjdqls)|@eundeom<br/>[@eundeom](https://github.com/eundeom)|SeulGi_LEE<br/>[@seulg2027](https://github.com/seulg2027)|
 
 ## [👝 프로젝트 : 42가 좋아지길 바래](#목차)
-| MVC 패턴의 구조와 생성에 대한 연습과 협업을 위한 미니 프로젝트
-<br><br>
-### [⚙ 전체적인 틀](#목차)
----
-<b>∘ 목적</b>
+<b>∘ 프로젝트 개요</b>
+- MVC 패턴의 구조와 생성에 대한 연습과 협업을 위한 미니 프로젝트
+
+<b>∘ 프로젝트 목적</b>
 - 최근 10년 동안 어떤 업종이 가장 많은 소비를 차지했는지 분석하는 궁금증에서 출발하여, Spring MVC 패턴을 구성하며 실무적인 개발 프로세스를 연습하고 협업 경험을 쌓는 데 중점을 두었습니다.
 
-<b>∘ Oracle DB 를 사용한 이유 :</b><br>
-Oracle DB는 방대한 카드 소비 데이터와 같은 구조적이고 복잡한 데이터를 안정적으로 저장하고 조회할 수 있는 기능을 제공합니다.
-높은 안정성과 신뢰도로 금융 및 카드 소비와 같은 데이터 관리에 적합하여 선택했습니다.
+<b>∘ 데이터 </b>
+- 전처리의 필요성
+- 의미와 출처
+- 
+
+<b>∘ RDBMS Oracle DB를 선택한 이유 :</b><br>
+Oracle DB는 방대한 카드 소비 데이터와 같은 **구조적**이고 **복잡한 데이터**를 **안정적**으로 **저장하고 조회**할 수 있는 기능을 제공합니다.
+높은 안정성과 신뢰도로 **금융 및 카드 소비와 같은 데이터 관리에 적합**하여 선택했습니다.
 
 <b>∘ 주요 기능</b>
 - 데이터 전처리 및 데이터 자동 삽입 기능
@@ -47,18 +47,20 @@ Oracle DB는 방대한 카드 소비 데이터와 같은 구조적이고 복잡�
 
 ### 🎈 [트러블 슈팅 [작성]](#목차)
 ---
-  #### ❗ 문제 : ![image](https://github.com/user-attachments/assets/bfcc1070-b6c6-48ed-8f1e-b2be9e57be47)
+  #### ❗ 문제  
   Oracle DB에서 프로세스 제한으로 인해 데이터 삽입 및 조회 실패
-  #### 📢 해결 : 
+  <br>
+  ![image](https://github.com/user-attachments/assets/bfcc1070-b6c6-48ed-8f1e-b2be9e57be47)
+  #### 📢 해결 
   `ALTER SYSTEM SET PROCESSES=200 SCOPE=spfile;` 명령어로 프로세스 제한 증가<br/>
   oracle 서버를 restart 하여 설정을 적용시킴
-  #### 🎓 결과 및 교훈: 
+  #### 🎓 결과 및 교훈
   데이터베이스 설정과 리소스 관리의 중요성을 깨달음
 
   ### axios 통신문제
-  #### ❗ 문제 : 
-  #### 📢 해결 :
-  #### 🎓 결과 및 교훈: 
+  #### ❗ 문제 
+  #### 📢 해결 
+  #### 🎓 결과 및 교훈
   
 <br><br>
 ### [⚙ 프로젝트 MVC 패턴 구조도](#목차)
@@ -116,7 +118,7 @@ http://127.0.0.1:1521/api/create
 | <div style="text-align: center;"><img src="https://github.com/user-attachments/assets/71e1234d-9684-4c1e-8edb-de061dd036f0" width="40" height="40"/></div> | <div style="text-align: center;"><img src="https://github.com/user-attachments/assets/e70bf1c8-8dbc-46c1-a6a9-18d6d843cbdf" width="40" height="40"/></div> | <div style="text-align: center;"><img src="https://github.com/user-attachments/assets/1440eb75-bd80-4801-b45b-3e2a7a25b28f" width="40" height="40"/></div> |
 <br>
 
-### [🛢 DDL](#목차)
+### [🛢 Schema](#목차)
 ---
 <div>
         <h3>1. 테이블 삭제</h3>
@@ -225,6 +227,7 @@ DB에 적합한 Date 타입으로 변환합니다.
 데이터는 ConsumeDAO.createRecord() 메서드를 호출하여 DB에 저장됩니다.
 </pre>
 </div>
+
 
 ### [☕ 프로젝트 회고 [작성중]](#목차)
 <pre>
