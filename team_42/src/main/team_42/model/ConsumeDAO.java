@@ -21,16 +21,15 @@ public class ConsumeDAO {
 
         try {
             con = DriverUtil.getConnection();
-            String sql = "INSERT INTO card_consume (id, industry, transaction_date, total_amount, time_line, usage_cnt, register_date) VALUES (?, ?, ?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO card_consume (industry, transaction_date, total_amount, time_line, usage_cnt, register_date) VALUES (?, ?, ?, ?, ?, ?)";
             pstmt = con.prepareStatement(sql);
 
-            pstmt.setString(1, consumeDto.getId()); 
-            pstmt.setString(2, consumeDto.getIndustry()); 
-            pstmt.setDate(3, consumeDto.getTransactionDate());
-            pstmt.setDouble(4, consumeDto.getTotalAmount()); 
-            pstmt.setInt(5, consumeDto.getTimeLine()); 
-            pstmt.setInt(6, consumeDto.getUsageCnt()); 
-            pstmt.setDate(7, consumeDto.getRegisterDate()); 
+            pstmt.setString(1, consumeDto.getIndustry()); 
+            pstmt.setDate(2, consumeDto.getTransactionDate());
+            pstmt.setDouble(3, consumeDto.getTotalAmount()); 
+            pstmt.setInt(4, consumeDto.getTimeLine()); 
+            pstmt.setInt(5, consumeDto.getUsageCnt()); 
+            pstmt.setDate(6, consumeDto.getRegisterDate());
 
             int result = pstmt.executeUpdate();
             return result == 1; 

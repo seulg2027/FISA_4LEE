@@ -36,11 +36,13 @@ public class ConsumeController {
 	 * 생성
 	 */
 	@PostMapping("/create")
-	public ResponseEntity<?> getCategoryCardConsume(@RequestParam(required=true) ConsumeDTO consumeDto) {
+	public ResponseEntity<?> getCategoryCardConsume(@RequestParam(required=true) Map<String, String> req) {
 		boolean result = false;
 		try {
+			ConsumeDTO consumeDto = RequestUtil.getConsumeDTO(req);
 			result = ConsumeDAO.createRecord(consumeDto);
 		} catch (Exception e) {
+			e.printStackTrace();
 			System.out.println(e.getMessage());
 		}
 		
