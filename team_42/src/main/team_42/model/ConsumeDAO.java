@@ -15,7 +15,7 @@ import main.team_42.model.util.DriverUtil;
 public class ConsumeDAO {
 
     // 'Create' 기능
-    public static boolean createRecord(ConsumeDTO consumeDto) throws SQLException {
+    public boolean createRecord(ConsumeDTO consumeDto) throws SQLException {
         Connection con = null;
         PreparedStatement pstmt = null;
 
@@ -40,7 +40,7 @@ public class ConsumeDAO {
     }
 
     // 'Read' 기능
-    public static List<ConsumeDTO> readAllRecords() throws SQLException {
+    public List<ConsumeDTO> readAllRecords() throws SQLException {
         Connection con = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null;
@@ -70,7 +70,7 @@ public class ConsumeDAO {
     }
 
  // 'Update' 기능
-    public static boolean updateRecord(ConsumeDTO consumeDto) throws SQLException {
+    public boolean updateRecord(ConsumeDTO consumeDto) throws SQLException {
         Connection con = null;
         PreparedStatement pstmt = null;
 
@@ -95,7 +95,7 @@ public class ConsumeDAO {
     }
 
     // 'Delete' 기능
-    public static boolean deleteRecord(String id) throws SQLException {
+    public boolean deleteRecord(String id) throws SQLException {
         Connection con = null;
         PreparedStatement pstmt = null;
 

@@ -12,12 +12,20 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import main.team_42.model.ConsumeDAO;
 import main.team_42.model.dto.ConsumeDTO;
 
 
 public class ExcelFileInputUtil {
+	
+	private final ConsumeDAO consumeDao;
+	
+	@Autowired
+	ExcelFileInputUtil(ConsumeDAO consumeDao) {
+		this.consumeDao = consumeDao;
+	}
 	
 	// 파일 읽어오기
 	@Test
@@ -54,7 +62,7 @@ public class ExcelFileInputUtil {
 				
 				System.out.println(consumeDto.toString());
 				
-				ConsumeDAO.createRecord(consumeDto);
+				consumeDao.createRecord(consumeDto);
 				
 				//System.out.println(aLine);
 			}
