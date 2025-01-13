@@ -314,18 +314,31 @@ Spring 코드 작성에 대한 이해도가 높아졌으며, Git 사용에 익�
 
 ### [⏱ 코드 최적화 [작성중]](#목차)
 **최적화**
-   1. DAO (create) 의미 명확성 부족 ,확장성 부족
-        <br>
-    ![지적-a2](https://github.com/user-attachments/assets/9a6e8410-8987-4c0d-b080-c2f846b95b20)
-    - 해결 
-    <br>
-    ![해결-a](https://github.com/user-attachments/assets/5c0d6fd1-56e6-4eb7-970b-5c64a8918abc)
-<br>
-    2. DAO (read) 코드의 맥락과 변수를 어디에서 초기화하는지 고려
-    ![지적-b](https://github.com/user-attachments/assets/d4740e64-3100-425b-a1af-b00646d11e72)
-    
-    - 해결 
-    <br>
+1. DAO (create) 의미 명확성 부족 ,확장성 부족
+![지적-a2](https://github.com/user-attachments/assets/9a6e8410-8987-4c0d-b080-c2f846b95b20)
+![해결-a](https://github.com/user-attachments/assets/5c0d6fd1-56e6-4eb7-970b-5c64a8918abc)
+> 가독성을 향상, 디버깅 및 유지보수 용이, 후속작업에 대한 유연성
+
+2. DAO (read) 코드의 맥락과 변수를 어디에서 초기화하는지 고려
+![지적-b](https://github.com/user-attachments/assets/d4740e64-3100-425b-a1af-b00646d11e72)
+
+![image](/img/해결-b.png)
+> 초기화된 빈 리스트와 null을 명확히 구분하여 반환값을 처리하는 로직에서 상황을 명확히 구분하고 대응
+
+<br/>
+
+3. Controller 예외 핸들링 중복 로직 분리
+
+![image](/img/before_update_controller.png)
+> Controller에서 중복되는 `try~catch` 코드를 사용하여, 가독성이 떨어지고 중복 코드 발생
+
+![image](/img/after_update_controller.png)
+![image](/img/after_update_exceptionhandler.png)
+> @ExceptionHandler 를 통해 예외를 처리하는 로직을 분리 <br>
+ **가독성이 향상되고, 중복 코드를 줄여서** 코드를 최적화
+
+</div>
+
 ### [✏ Git 규칙](#목차)
 <div><pre><ul>
         Feat ➕ : 새로운 기능을 추가할 경우
