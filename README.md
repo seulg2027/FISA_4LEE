@@ -1,6 +1,17 @@
+## [👝 프로젝트 : 42가 좋아지길 바래](#목차)
+<b>∘ 프로젝트 개요</b>
+- MVC 패턴의 구조와 생성에 대한 연습과 협업을 위한 미니 프로젝트
+
+<b>∘ 프로젝트 목적</b>
+- 최근 10년 동안 어떤 업종이 가장 많은 소비를 차지했는지 분석하는 궁금증에서 출발하여, Spring MVC 패턴을 구성하며 실무적인 개발 프로세스를 연습하고 협업 경험을 쌓는 데 중점을 두었습니다.
+
+<br>
+<br>
+
 # 목차
-1. [🙆🏻‍♂️ 팀원](#%EF%B8%8F-팀원)
-2. [👝 프로젝트 : 42가 좋아지길 바래](#-프로젝트--42가-좋아지길-바래)
+1. [👝 프로젝트 : 42가 좋아지길 바래](#-프로젝트--42가-좋아지길-바래)
+2. [🙆🏻‍♂️ 팀원](#%EF%B8%8F-팀원)
+3. [🔑Key Point](#key-point)
 4. [🎈 트러블 슈팅](#-트러블-슈팅-작성)
 5. [⚙ 프로젝트 MVC 패턴 구조도](#-프로젝트-mvc-패턴-구조도)
 6. [📃 API 명세서](#-api-명세서)
@@ -13,23 +24,25 @@
 13. [✏ Git 규칙](#-git-규칙)
 14. [💡 1/3 미션](#-13--미션)
 
-# 팀명 : FISA_4LEE
-우리FISA 4기 클라우드 엔지니어링 4LEE팀
+<br><br>
 
 ---
 
 ### [🙆🏻‍♂️ 팀원](#목차)
----
+
+#### 팀명 : FISA_4LEE
+우리FISA 4기 클라우드 엔지니어링 4LEE팀
+
 |<img src="https://avatars.githubusercontent.com/u/179544856?v=4" width="150" height="150"/>|<img src="https://avatars.githubusercontent.com/u/114290855?v=4" width="150" height="150"/>|<img src="https://avatars.githubusercontent.com/u/121565744?v=4" width="150" height="150"/>|<img src="https://avatars.githubusercontent.com/u/55776421?v=4" width="150" height="150"/>|
 |:-:|:-:|:-:|:-:|
 |이은준<br/>[@2EunJun](https://github.com/adf123124)|[@andytjdqls](https://github.com/andytjdqls)|@eundeom<br/>[@eundeom](https://github.com/eundeom)|SeulGi_LEE<br/>[@seulg2027](https://github.com/seulg2027)|
 
-## [👝 프로젝트 : 42가 좋아지길 바래](#목차)
-<b>∘ 프로젝트 개요</b>
-- MVC 패턴의 구조와 생성에 대한 연습과 협업을 위한 미니 프로젝트
+<br>
 
-<b>∘ 프로젝트 목적</b>
-- 최근 10년 동안 어떤 업종이 가장 많은 소비를 차지했는지 분석하는 궁금증에서 출발하여, Spring MVC 패턴을 구성하며 실무적인 개발 프로세스를 연습하고 협업 경험을 쌓는 데 중점을 두었습니다.
+---
+
+
+### [🔑Key Point](#목차)
 
 <b>∘ 데이터 </b>
 - 전처리의 필요성
@@ -337,16 +350,17 @@ Spring 코드 작성에 대한 이해도가 높아졌으며, Git 사용에 익�
 #### 3. Controller 예외 핸들링 중복 로직 분리
 
 <img src="/img/before_update_controller.png" height="300">
+
 > Controller에서 중복되는 `try~catch` 코드를 사용하여, 가독성이 떨어지고 중복 코드 발생
 
 <img src="/img/after_update_controller.png" height="200">
 <img src="/img/after_update_exceptionhandler.png" height="120">
 
-> @ExceptionHandler 를 통해 예외를 처리하는 로직을 분리 <br>
-
- **가독성이 향상되고, 중복 코드를 줄여서** 코드를 최적화
+> @ExceptionHandler 를 통해 예외를 처리하는 로직을 분리 **가독성이 향상되고, 중복 코드를 줄여서** 코드를 최적화
 
 </div>
+
+<br><br>
 
 ### [✏ Git 규칙](#목차)
 <div><pre><ul>
