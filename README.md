@@ -1,6 +1,6 @@
 # 목차
 
-- [🙆🏻‍♂️🙆🏻‍♀️ 팀원](#팀원-%EF%B8%8F%EF%B8%8F)
+- [🙆🏻‍♂️🙆🏻‍♀️ 팀원](#%EF%B8%8F%EF%B8%8F-팀원)
 - [👝 프로젝트 : 42가 좋아지길 바래](#-프로젝트--42가-좋아지길-바래)
 - [⚙ 전체적인 틀](#-전체적인-틀)
 - [🎈 트러블 슈팅](#-트러블-슈팅-작성)
@@ -22,16 +22,16 @@
 [수정] -> 피드백 및 자유 작성
 [작성] -> 직접 작성하는 부분
 
-### 팀원 🙆🏻‍♂️🙆🏻‍♀️
+### [🙆🏻‍♂️🙆🏻‍♀️ 팀원](#목차)
 ---
 |<img src="https://avatars.githubusercontent.com/u/179544856?v=4" width="150" height="150"/>|<img src="https://avatars.githubusercontent.com/u/114290855?v=4" width="150" height="150"/>|<img src="https://avatars.githubusercontent.com/u/121565744?v=4" width="150" height="150"/>|<img src="https://avatars.githubusercontent.com/u/55776421?v=4" width="150" height="150"/>|
 |:-:|:-:|:-:|:-:|
 |이은준<br/>[@2EunJun](https://github.com/adf123124)|[@andytjdqls](https://github.com/andytjdqls)|@eundeom<br/>[@eundeom](https://github.com/eundeom)|SeulGi_LEE<br/>[@seulg2027](https://github.com/seulg2027)|
 
-## 👝 프로젝트 : 42가 좋아지길 바래
+## [👝 프로젝트 : 42가 좋아지길 바래](#목차)
 | MVC 패턴의 구조와 생성에 대한 연습과 협업을 위한 미니 프로젝트
 <br><br>
-### ⚙ 전체적인 틀
+### [⚙ 전체적인 틀](#목차)
 ---
 <b>∘ 목적</b>
 - 최근 10년 동안 어떤 업종이 가장 많은 소비를 차지했는지 분석하는 궁금증에서 출발하여, Spring MVC 패턴을 구성하며 실무적인 개발 프로세스를 연습하고 협업 경험을 쌓는 데 중점을 두었습니다.
@@ -45,7 +45,7 @@ Oracle DB는 방대한 카드 소비 데이터와 같은 구조적이고 복잡�
 - 소비 데이터 테이블 조회
 <br>
 
-### 🎈 트러블 슈팅 [작성]
+### 🎈 [트러블 슈팅 [작성]](#목차)
 ---
   #### ❗ 문제 : ![image](https://github.com/user-attachments/assets/bfcc1070-b6c6-48ed-8f1e-b2be9e57be47)
   Oracle DB에서 프로세스 제한으로 인해 데이터 삽입 및 조회 실패
@@ -61,13 +61,13 @@ Oracle DB는 방대한 카드 소비 데이터와 같은 구조적이고 복잡�
   #### 🎓 결과 및 교훈: 
   
 <br><br>
-### ⚙ 프로젝트 MVC 패턴 구조도
+### [⚙ 프로젝트 MVC 패턴 구조도](#목차)
 ---
 ![image](https://github.com/user-attachments/assets/847b0f20-16a8-4bbb-8138-9ec3c49d71c2)
 
 
 <br><br>
-### 📃 API 명세서
+### [📃 API 명세서](#목차)
 ---
 <pre>
 [조회]
@@ -80,7 +80,7 @@ http://127.0.0.1:1521/api/delete
 http://127.0.0.1:1521/api/create
 </pre>
 
-### 🔧 기능 설명 [수정]
+### [🔧 기능 설명 [수정]](#목차)
 ---
 |    조회   |
 | :-------: |
@@ -98,7 +98,7 @@ http://127.0.0.1:1521/api/create
 | :-------: |
 | 결과이미지   |
 
-### 🔗 사용스택
+### [🔗 사용스택](#목차)
 ---
 | Front-end | Back-end |
 | :-------: | :------: |
@@ -116,7 +116,7 @@ http://127.0.0.1:1521/api/create
 | <div style="text-align: center;"><img src="https://github.com/user-attachments/assets/71e1234d-9684-4c1e-8edb-de061dd036f0" width="40" height="40"/></div> | <div style="text-align: center;"><img src="https://github.com/user-attachments/assets/e70bf1c8-8dbc-46c1-a6a9-18d6d843cbdf" width="40" height="40"/></div> | <div style="text-align: center;"><img src="https://github.com/user-attachments/assets/1440eb75-bd80-4801-b45b-3e2a7a25b28f" width="40" height="40"/></div> |
 <br>
 
-### 🛢 DDL
+### [🛢 DDL](#목차)
 ---
 <div>
         <h3>1. 테이블 삭제</h3>
@@ -200,7 +200,7 @@ END;
 </div>
 <br><br>
 
-### ⛓ 데이터 전처리 과정
+### [⛓ 데이터 전처리 과정](#목차)
 ---
 <div>
 전체 데이터가 String 타입으로 선언되어 있어, 데이터를 한 라인의 단어 단위로 분리한 후, 이를 데이터베이스(DB)에 입력하는 과정을 구현하였습니다.
@@ -226,7 +226,7 @@ DB에 적합한 Date 타입으로 변환합니다.
 </pre>
 </div>
 
-### ☕ 프로젝트 회고 [작성중]
+### [☕ 프로젝트 회고 [작성중]](#목차)
 <pre>
 <b>이은준</b>
 
@@ -296,10 +296,10 @@ Git을 사용하면서 폴더 경로 지정 및 기본 사용에 아직 어려�
 </pre>
 <br><br>
 
-### ⏱ 코드 최적화 [작성중]
+### [⏱ 코드 최적화 [작성중]](#목차)
 <div><pre></pre></div>
 
-### ✏ Git 규칙
+### [✏ Git 규칙](#목차)
 <div><pre><ul>
         Feat ➕ : 새로운 기능을 추가할 경우
         Fix 🛠️ : 버그를 고친 경우
@@ -318,7 +318,7 @@ Git을 사용하면서 폴더 경로 지정 및 기본 사용에 아직 어려�
     </ul></pre></div>
 
 <br><br>
-### 💡 1/3  미션
+### [💡 1/3  미션](#목차)
 <details>
 <summary>슬기</summary>
 <div markdown="1">
