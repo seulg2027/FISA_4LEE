@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import main.team_42.model.ConsumeDAO;
 import main.team_42.model.dto.ConsumeDTO;
+import main.team_42.model.util.RequestUtil;
 
 @RestController
 public class ConsumeController {
@@ -23,7 +24,8 @@ public class ConsumeController {
 	public ResponseEntity<?> getAllCardConsume(@RequestParam(required=false) Map<String, String> req) {
 		List<ConsumeDTO> list = null;
 		try {
-			list = ConsumeDAO.readAllRecords(req);
+			String params = RequestUtil.getParams(req);
+			list = ConsumeDAO.readAllRecords(params);
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 		}
