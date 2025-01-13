@@ -8,7 +8,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 import main.team_42.model.dto.ConsumeDTO;
 import main.team_42.model.util.DriverUtil;
@@ -61,7 +60,6 @@ public class ConsumeDAO {
             }
             
             String sql = "SELECT * FROM card_consume " + params;
-            System.out.println(sql);
             
             pstmt = con.prepareStatement(sql);
             rs = pstmt.executeQuery();
