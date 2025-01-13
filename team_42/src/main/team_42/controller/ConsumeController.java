@@ -3,6 +3,7 @@ package main.team_42.controller;
 import java.sql.SQLException;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,15 +17,23 @@ import main.team_42.model.dto.ConsumeDTO;
 
 @RestController("/api")
 public class ConsumeController {
+	
+	private final ConsumeDAO consumeDao;
+	
+	@Autowired
+	ConsumeController(ConsumeDAO consumeDao) {
+		this.consumeDao = consumeDao;
+	}
+	
 	/*
 	 * 모든 데이터 조회
 	 */
 	@GetMapping("/getall")
-	public ResponseEntity<?> getAllCardConsume(@RequestParam(required=false) String industry
-											 , @RequestParam(required=false) String date) {
+	public ResponseEntity<?> getAllCardConsume(@RequestBody(required=false) String industry
+											 , @RequestBody(required=false) String date) {
 		List<ConsumeDTO> list = null;
 		try {
-			list = ConsumeDAO.readAllRecords();
+			list = consumeDao.readAllRecords();
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 		}
@@ -38,7 +47,22 @@ public class ConsumeController {
 	public ResponseEntity<?> getCategoryCardConsume(@RequestBody(required=true) ConsumeDTO consumeDto) {
 		boolean result = false;
 		try {
-			result = ConsumeDAO.createRecord(consumeDto);
+			result = consumeDao.createRecord(consumeDto);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		
+		return new ResponseEntity<>(result, HttpStatus.OK);
+	}
+	
+	/*
+	 * 삭제
+	 */
+	@PostMapping("/delete")
+	public ResponseEntity<?> delCategoryCardConsume(@RequestBody(required=true) String id) {
+		boolean result = false;
+		try {
+			result = consumeDao.deleteRecord(id);
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
