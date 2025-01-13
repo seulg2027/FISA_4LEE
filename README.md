@@ -102,20 +102,11 @@ http://127.0.0.1:1521/api/create
 
 ### [🔗 사용스택](#목차)
 ---
-| Front-end | Back-end |
-| :-------: | :------: |
-| React     | Java     |
-| <div style="text-align: center;"><img src="https://github.com/user-attachments/assets/aff0f203-760b-4e70-a76b-de189a0c2a91" width="40" height="40"/></div> | <div style="text-align: center;"><img src="https://github.com/user-attachments/assets/51c9e7a6-8758-43c3-9c03-0329ed30f0c6" width="40" height="40"/></div> |
+| Front-end | Back-end |    IDE    |           |   협업툴  |           |           |
+| :-------: | :------: | :-------: | :-------: | :-------: | :-------: | :-------: |
+| React     | Java     | DBeaver   | STS       | Git       | Slack     | Figma     |
+| <div style="text-align: center;"><img src="https://github.com/user-attachments/assets/aff0f203-760b-4e70-a76b-de189a0c2a91" width="40" height="40"/></div> | <div style="text-align: center;"><img src="https://github.com/user-attachments/assets/51c9e7a6-8758-43c3-9c03-0329ed30f0c6" width="40" height="40"/></div> | <div style="text-align: center;"><img src="https://github.com/user-attachments/assets/7654a028-2074-428f-82ba-27132eba2d53" width="40" height="40"/></div> | <div style="text-align: center;"><img src="https://github.com/user-attachments/assets/8a003289-bc6f-487a-918b-1ad7826d9153" width="40" height="40"/></div> | <div style="text-align: center;"><img src="https://github.com/user-attachments/assets/71e1234d-9684-4c1e-8edb-de061dd036f0" width="40" height="40"/></div> | <div style="text-align: center;"><img src="https://github.com/user-attachments/assets/e70bf1c8-8dbc-46c1-a6a9-18d6d843cbdf" width="40" height="40"/></div> | <div style="text-align: center;"><img src="https://github.com/user-attachments/assets/1440eb75-bd80-4801-b45b-3e2a7a25b28f" width="40" height="40"/></div> |
 
-|    IDE    |           |
-| :-------: | :-------: |
-| DBeaver   | STS       |
-| <div style="text-align: center;"><img src="https://github.com/user-attachments/assets/7654a028-2074-428f-82ba-27132eba2d53" width="40" height="40"/></div> | <div style="text-align: center;"><img src="https://github.com/user-attachments/assets/8a003289-bc6f-487a-918b-1ad7826d9153" width="40" height="40"/></div> |
-
-|   협업툴  |           |           |
-| :-------: | :-------: | :-------: |
-| Git       | Slack     | Figma     |
-| <div style="text-align: center;"><img src="https://github.com/user-attachments/assets/71e1234d-9684-4c1e-8edb-de061dd036f0" width="40" height="40"/></div> | <div style="text-align: center;"><img src="https://github.com/user-attachments/assets/e70bf1c8-8dbc-46c1-a6a9-18d6d843cbdf" width="40" height="40"/></div> | <div style="text-align: center;"><img src="https://github.com/user-attachments/assets/1440eb75-bd80-4801-b45b-3e2a7a25b28f" width="40" height="40"/></div> |
 <br>
 
 ### [🛢 Schema](#목차)
@@ -205,7 +196,11 @@ END;
 ### [⛓ 데이터 전처리 과정](#목차)
 ---
 <div>
-전체 데이터가 String 타입으로 선언되어 있어, 데이터를 한 라인의 단어 단위로 분리한 후, 이를 데이터베이스(DB)에 입력하는 과정을 구현하였습니다.
+모든 데이터가 문자열 형태로 되어있어, 각 라인을 단어 단위로 토큰화하여 데이터베이스에 적재하는 로직을 구현했습니다. <br/><br/>
+
+![image](/img/visual_file_data_process.png)
+<img src="" width="500"/><br/>
+
 <pre>
 1. 파일 읽기 및 인코딩 처리
 CSV 파일을 BufferedReader를 사용하여 한 줄씩 읽어옵니다.
