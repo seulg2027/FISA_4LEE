@@ -36,7 +36,7 @@
     - 정확히 정의된 데이터 타입과 제약 조건을 갖춘 RDBMS에 데이터를 저장해서 **저장 공간을 절약**하기 위해, **기존 데이터를 형변환**해야하기 때문입니다.
     - **중복 데이터의 저장을 피하고, 공백이나 특수 문자를 제거하기 위해** 정교한 전처리 과정을 수행해야 합니다.
 - 의미
-  - 소비자들이 하루 중 어떤 시간대에 더 많은 카드를 사용하고 소비하는지를 분석하는 데이터로 시간대 별로 카드를 사용하는 패턴과 소비 트렌드를 분석하여, 소비 동향을 파악하는 데 사용됩니다.
+  - 소비자들이 하루 중 어떤 시간대에 더 많은 카드를 사용하고 소비하는지를 분석하는 데이터로 시간대 별로 카드를 사용하는 패턴과 소비 트렌드를 분석하여, **소비 동향을 파악**하는 데 사용됩니다.
 - [출처](https://bigdata.seoul.go.kr/data/selectSampleData.do?r_id=P213&sample_data_seq=318)
 
 <b>∘ RDBMS Oracle DB를 선택한 이유 :</b><br>
@@ -46,9 +46,9 @@ Oracle DB는 방대한 카드 소비 데이터와 같은 **구조적**이고 **�
 <b>∘ Spring Boot를 선택한 이유 :</b><br>
 데이터를 효과적으로 웹 페이지로 제공하기 위해 안정적인 서버 운영이 필수적이었습니다. 이를 위해 Tomcat 과 같은 **WAS 서버를 사용**해야 했기에, 제한된 시간과 자원을 고려해서 내장 WAS서버를 제공하는 Spring Boot를 채택하여 효율적인 서버 환경을 구축했습니다.
 
-<b>∘ 주요 기능</b>
-- 데이터 전처리 및 데이터 자동 삽입 기능
-- 소비 데이터 테이블 조회
+<b>∘ Axios를 선택한 이유</b>
+동기 방식은 요청이 완료될 때까지 기다려야 하기 때문에 UI가 멈추거나 사용자가 대기해야 하는 문제가 발생할 수 있기 때문에 Axios를 선택하였습니다. Axios와 같은 **비동기 HTTP 요청**은 사용자가 데이터를 요청하는 동안 다른 작업을 수행할 수 있게 합니다. 여러 요청을 **동시에 처리**할 수 있기 때문에, 네트워크 요청의 **지연 시간을 최소화**하고 애플리케이션의 **성능을 최적화**할 수 있습니다.
+
 <br>
 
 ### 🎈 [트러블 슈팅 [작성]](#목차)
@@ -63,11 +63,6 @@ Oracle DB는 방대한 카드 소비 데이터와 같은 **구조적**이고 **�
   #### 🎓 결과 및 교훈
   데이터베이스 설정과 리소스 관리의 중요성을 깨달음
 
-  ### axios 통신문제
-  #### ❗ 문제 
-  #### 📢 해결 
-  #### 🎓 결과 및 교훈
-  
 <br><br>
 ### [⚙ 프로젝트 MVC 패턴 구조도](#목차)
 ---
@@ -90,21 +85,21 @@ http://127.0.0.1:1521/api/create
 
 ### [🔧 기능 설명 [수정]](#목차)
 ---
-|    조회   |
-| :-------: |
-| 결과이미지   |
+|    조회   |       industry별 조회     |
+| :-------: | :-------: |
+| ![select all](https://github.com/user-attachments/assets/023478f5-73a7-4097-b924-8dfd52d3af08) | ![select industry](https://github.com/user-attachments/assets/84dfb12f-c0b4-480c-9a46-58140fbeac5a) |
 
-|      industry별 조회     |
-| :-------: |
-| 결과이미지   |
+|       생성    |      |
+| :-------: | :-------: |
+| ![insert](https://github.com/user-attachments/assets/295b6989-1c3d-41c0-b198-484916e7e296)
+  | ![check insert](https://github.com/user-attachments/assets/ccbde352-628b-4f33-ad48-725ec975ed21) |
 
-|     삭제      |
-| :-------: |
-| 결과이미지   |
 
-|       생성    |
-| :-------: |
-| 결과이미지   |
+|     삭제      | |
+| :-------: | :-------: |
+| ![delete](https://github.com/user-attachments/assets/e1543c50-bff5-4980-8597-44ca96fd822d) |
+![check delete](https://github.com/user-attachments/assets/291a4e36-d86a-4cf6-8aba-6e537f7ad110)|
+
 
 ### [🔗 사용스택](#목차)
 ---
@@ -318,8 +313,19 @@ Spring 코드 작성에 대한 이해도가 높아졌으며, Git 사용에 익�
 
 
 ### [⏱ 코드 최적화 [작성중]](#목차)
-<div><pre></pre></div>
-
+**최적화**
+   1. DAO (create) 의미 명확성 부족 ,확장성 부족
+        <br>
+    ![지적-a2](https://github.com/user-attachments/assets/9a6e8410-8987-4c0d-b080-c2f846b95b20)
+    - 해결 
+    <br>
+    ![해결-a](https://github.com/user-attachments/assets/5c0d6fd1-56e6-4eb7-970b-5c64a8918abc)
+<br>
+    2. DAO (read) 코드의 맥락과 변수를 어디에서 초기화하는지 고려
+    ![지적-b](https://github.com/user-attachments/assets/d4740e64-3100-425b-a1af-b00646d11e72)
+    
+    - 해결 
+    <br>
 ### [✏ Git 규칙](#목차)
 <div><pre><ul>
         Feat ➕ : 새로운 기능을 추가할 경우
