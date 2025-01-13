@@ -30,21 +30,21 @@
     </ul></pre></div>
 <br>
 
-## 👝 프로젝트 : 42가 좋아지길 바래... [수정]
+## 👝 프로젝트 : 42가 좋아지길 바래
 | MVC 패턴의 구조와 생성에 대한 연습과 협업을 위한 미니 프로젝트
 <br><br>
-### ⚙ 전체적인 틀 [수정]
+### ⚙ 전체적인 틀
 ---
 <b>∘ 목적</b>
-- 최근 10년동안 어떠한 업종이 가장 많은 소비를 했는지 궁금함에서 시작하여, Spring Mvc패턴을 구성하고 연습하며 협업 경험을 쌓는 것에 의의을 둠.
+- 최근 10년 동안 어떤 업종이 가장 많은 소비를 차지했는지 분석하는 궁금증에서 출발하여, Spring MVC 패턴을 구성하며 실무적인 개발 프로세스를 연습하고 협업 경험을 쌓는 데 중점을 두었습니다.
 
 <b>∘ Oracle DB 를 사용한 이유 :</b><br>
-방대한 카드 소비 데이터와 같이 구조적이고 복잡한 데이터를 안정적으로 저장하고 조회
-높은 안정성과 신뢰도를 제공 -> 금융, 카드 소비와 같은 데이터 관리에 적합
+Oracle DB는 방대한 카드 소비 데이터와 같은 구조적이고 복잡한 데이터를 안정적으로 저장하고 조회할 수 있는 기능을 제공합니다.
+높은 안정성과 신뢰도로 금융 및 카드 소비와 같은 데이터 관리에 적합하여 선택했습니다.
 
 <b>∘ 주요 기능</b>
-- 데이터 전처리 후, 데이터 자동 삽입
-- 테이블 조회
+- 데이터 전처리 및 데이터 자동 삽입 기능
+- 소비 데이터 테이블 조회
 <br>
 
 ### 🎈 트러블 슈팅 [작성]
@@ -53,6 +53,7 @@
   Oracle DB에서 프로세스 제한으로 인해 데이터 삽입 및 조회 실패
   #### 📢 해결 : 
   `ALTER SYSTEM SET PROCESSES=200 SCOPE=spfile;` 명령어로 프로세스 제한 증가
+  oracle 서버를 restart 하여 설정을 적용시킴
   #### 🎓 결과 및 교훈: 
   데이터베이스 설정과 리소스 관리의 중요성을 깨달음
 
@@ -67,15 +68,15 @@
 ![구조도](https://github.com/user-attachments/assets/bc08c783-1855-4d8c-800c-476dab62d890)
 
 <br><br>
-### 📃 API 명세서 [수정]
+### 📃 API 명세서
 ---
 <pre>
-  [조회]
+[조회]
 http://127.0.0.1:1521/api/getall
 [industry별 조회]
 http://127.0.0.1:1521/api/getall?industry=<>
-[기간별 조회]
-http://127.0.0.1:1521/api/getall?date=<>
+[삭제]
+http://127.0.0.1:1521/api/delete
 [생성]
 http://127.0.0.1:1521/api/create
 </pre>
@@ -110,15 +111,15 @@ http://127.0.0.1:1521/api/create
 | <div style="text-align: center;"><img src="https://github.com/user-attachments/assets/71e1234d-9684-4c1e-8edb-de061dd036f0" width="40" height="40"/></div> | <div style="text-align: center;"><img src="https://github.com/user-attachments/assets/e70bf1c8-8dbc-46c1-a6a9-18d6d843cbdf" width="40" height="40"/></div> | <div style="text-align: center;"><img src="https://github.com/user-attachments/assets/1440eb75-bd80-4801-b45b-3e2a7a25b28f" width="40" height="40"/></div> |
 <br>
 
-### 🛢 DDL  [수정]
+### 🛢 DDL
 ---
 <div>
         <h3>1. 테이블 삭제</h3>
         <pre>
-목적: 기존에 생성된 card_consume 테이블을 삭제
-BEGIN
+-- 기존에 생성된 card_consume 테이블을 삭제
+BEGIN -- 테이블과 관련된 모든 제약 조건(외래 키 등)을 함께 삭제
     EXECUTE IMMEDIATE 'DROP TABLE card_consume CASCADE CONSTRAINTS';
-EXCEPTION
+EXCEPTION --테이블이 존재하지 않는 경우에도 오류를 발생시키지 않고 정상적으로 처리
     WHEN OTHERS THEN
         NULL; -- 테이블이 없으면 예외를 무시
 END;</pre>
@@ -127,6 +128,7 @@ END;</pre>
 <div>
         <h3>2. 시퀀스 삭제</h3>
         <pre>
+-- 기존에 생성된 card_consume_seq 시퀀스를 삭제
 BEGIN
     EXECUTE IMMEDIATE 'DROP SEQUENCE card_consume_seq';
 EXCEPTION
@@ -138,6 +140,7 @@ END;</pre>
 <div>
         <h3>3. 트리거 삭제</h3>
         <pre>
+-- 기존에 생성된 card_consume_trigger를 삭제
 BEGIN
     EXECUTE IMMEDIATE 'DROP TRIGGER card_consume_trigger';
 EXCEPTION
@@ -166,7 +169,9 @@ CREATE TABLE card_consume (
         <pre>
 CREATE SEQUENCE card_consume_seq
 START WITH 1
-INCREMENT BY 1;</pre>
+INCREMENT BY 1;
+-- id 칼럼에 사용할 고유한 값을 자동 생성하는 코드
+-- 1부터 시작해서 호출될 때마다 1씩 증가</pre>
 </div>
 
 <div>
@@ -176,34 +181,73 @@ CREATE OR REPLACE TRIGGER card_consume_trigger
 BEFORE INSERT ON card_consume
 FOR EACH ROW
 BEGIN
+    -- ID가 NULL일 경우 시퀀스를 통해 자동으로 값을 생성
+    -- IF :NEW.id IS NULL: 삽입 요청된 데이터의 id 값이 비어 있는지 확인.
+    -- SELECT card_consume_seq.NEXTVAL INTO :NEW.id: 시퀀스에서 다음 값을 가져와 id에 삽입.
     IF :NEW.id IS NULL THEN
         SELECT card_consume_seq.NEXTVAL
         INTO :NEW.id
         FROM dual;
     END IF;
-END;</pre>
+END;
+-- 테이블에 데이터 삽입 시 id 값이 비어 있을 경우 시퀀스를 통해 
+-- 자동으로 ID 값을 생성합니다.</pre>
 </div>
 <br><br>
 
-### ⛓ 데이터 전처리 과정 [수정]
+### ⛓ 데이터 전처리 과정
 ---
 <div>
-  <pre>
-    String 타입으로 데이터 전체가 선언되어 있어서, 이를 한 라인의 한 단어씩 나누어서 DB에 데이터를 입력하였습니다.
-  </pre>
+전체 데이터가 String 타입으로 선언되어 있어, 데이터를 한 라인의 단어 단위로 분리한 후, 이를 데이터베이스(DB)에 입력하는 과정을 구현하였습니다.
+<pre>
+1. 파일 읽기 및 인코딩 처리
+CSV 파일을 BufferedReader를 사용하여 한 줄씩 읽어옵니다.
+파일 인코딩은 "EUC-KR"로 설정하여 한글 데이터 처리를 지원합니다.
+        <br>
+2. 데이터 파싱 및 변환
+데이터를 CSV의 각 필드로 분리하기 위해 정규식을 사용하여 split 메서드를 활용하였습니다.
+분리된 데이터를 필요에 따라 String, int, double 등의 적합한 데이터 타입으로 변환합니다.
+        <br>
+3. 날짜 변환
+String 형태로 제공된 날짜 데이터를 DateTimeFormatter와 LocalDate를 사용해 yyyyMMdd 형식으로 파싱하고, 
+DB에 적합한 Date 타입으로 변환합니다.
+        <br>
+4.DTO 객체 생성 및 데이터 매핑
+파싱한 데이터를 ConsumeDTO 객체의 각 필드에 설정합니다.
+생성된 DTO는 DAO(Data Access Object)를 통해 DB에 삽입됩니다.
+        <br>
+5.DB 레코드 생성
+데이터는 ConsumeDAO.createRecord() 메서드를 호출하여 DB에 저장됩니다.
+</pre>
 </div>
 
-### ☕ 프로젝트 회고 [작성]
+### ☕ 프로젝트 회고 [작성중]
 <pre>이은준</pre>
 <pre>이슬기
 
 조그만 프로젝트였지만 오랜만에 여러 명의 팀원들과 하나의 프로젝트 기획, 설계, 개발, 완성이라는 목표를 가지고 활동해서 뜻깊은 시간이었다. 분업화를 하고 함께 목표를 달성하기 위해 자신의 역할만 하는 것이 아니라 서로서로 도와주었다. 에러와 문제들을 부딪히면서 짧은 시간 내에 해결해야한다는 압박이 있어 마음이 조급해지기도 했지만, 하나씩 풀어나가는 게 재미있었다.😆 오랫동안 개발을 하다보니 가끔 내가 왜 이 길을 택했는지 헷갈릴 때가 있는데, 이번 프로젝트를 통해 그 이유를 한 번 더 상기시킬 수 있는 기회가 되었던 것 같다.
 </pre>
-<pre>이성빈</pre>
+<pre>이성빈
+<br>
+기술적 성과
+Spring MVC와 Oracle DB를 활용한 실전 경험을 통해 백엔드 개발 역량을 강화함.
+Git 명령어 활용과 체계적인 Commit Message 작성의 중요성을 이해하고 정리하는 계기가 됨.
+<br>
+배운점
+팀원 간 원활한 의사소통과 명확한 역할 분담이 프로젝트 성공의 핵심임을 깨달음.
+주기적인 Commit과 공유를 통해 작업 중복을 방지하고, 팀워크를 강화할 필요성을 경험함.
+<br>
+아쉬운점
+팀원들이 개발을 훌륭히 수행해준 덕분에 개인적으로 개발할 기회가 상대적으로 적어 아쉬움이 남음.
+앞으로는 보다 주도적으로 참여하며 성장할 수 있는 기회를 만들어가고자 함.
+
+프로젝트 중반에 의사소통의 부족으로 이미 완료된 파일을 다시 작업하는 일이 발생.
+이를 계기로 의사소통의 중요성과 주기적인 협업 방식 점검의 필요성을 실감함.
+</pre>
 <pre>이은정</pre>
 <br><br>
 
-### ⏱ 코드 최적화 [수정]
+### ⏱ 코드 최적화 [작성중]
 <div><pre></pre></div>
 
 <br><br>
