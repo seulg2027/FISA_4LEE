@@ -2,12 +2,13 @@ package main.team_42.model;
 
 //?
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 import main.team_42.model.dto.ConsumeDTO;
 import main.team_42.model.util.DriverUtil;
@@ -40,7 +41,7 @@ public class ConsumeDAO {
     }
 
     // 'Read' 기능
-    public static List<ConsumeDTO> readAllRecords() throws SQLException {
+    public static List<ConsumeDTO> readAllRecords(Map<String, String> req) throws SQLException {
         Connection con = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null;
@@ -48,7 +49,20 @@ public class ConsumeDAO {
 
         try {
             con = DriverUtil.getConnection();
-            String sql = "SELECT * FROM card_consume";
+            
+            String params = "";
+            if (req.size() > 0) {
+            	params += "WHERE ";
+                for (String key: req.keySet()) {
+                	params += key + "=" + "\'";
+                	params += req.get(key) + "\' AND ";
+                }
+                params += "1=1";
+            }
+            
+            String sql = "SELECT * FROM card_consume " + params;
+            System.out.println(sql);
+            
             pstmt = con.prepareStatement(sql);
             rs = pstmt.executeQuery();
 

@@ -2,6 +2,7 @@ package main.team_42.controller;
 
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,11 +20,10 @@ public class ConsumeController {
 	 * 모든 데이터 조회
 	 */
 	@GetMapping("/getall")
-	public ResponseEntity<?> getAllCardConsume(@RequestBody(required=false) String industry
-											 , @RequestBody(required=false) String date) {
+	public ResponseEntity<?> getAllCardConsume(@RequestBody(required=false) Map<String, String> req) {
 		List<ConsumeDTO> list = null;
 		try {
-			list = ConsumeDAO.readAllRecords();
+			list = ConsumeDAO.readAllRecords(req);
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 		}
