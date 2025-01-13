@@ -1,3 +1,20 @@
+# 목차
+
+- [🙆🏻‍♂️🙆🏻‍♀️ 팀원](#팀원-%EF%B8%8F%EF%B8%8F)
+- [👝 프로젝트 : 42가 좋아지길 바래](#-프로젝트--42가-좋아지길-바래)
+- [⚙ 전체적인 틀](#-전체적인-틀)
+- [🎈 트러블 슈팅](#-트러블-슈팅-작성)
+- [⚙ 프로젝트 MVC 패턴 구조도](#-프로젝트-mvc-패턴-구조도)
+- [📃 API 명세서](#-api-명세서)
+- [🔧 기능 설명](#-기능-설명-수정)
+- [🔗 사용 스택](#-사용스택)
+- [🛢 DDL](#-ddl)
+- [⛓ 데이터 전처리 과정](#-데이터-전처리-과정)
+- [☕ 프로젝트 회고](#-프로젝트-회고-작성중)
+- [⏱ 코드 최적화](#-코드-최적화-작성중)
+- [✏ Git 규칙](#-git-규칙)
+- [💡 1/3 미션](#-13--미션)
+
 # FISA_4LEE
 우리FISA 4기 클라우드 엔지니어링 4LEE팀
 
@@ -10,25 +27,6 @@
 |<img src="https://avatars.githubusercontent.com/u/179544856?v=4" width="150" height="150"/>|<img src="https://avatars.githubusercontent.com/u/114290855?v=4" width="150" height="150"/>|<img src="https://avatars.githubusercontent.com/u/121565744?v=4" width="150" height="150"/>|<img src="https://avatars.githubusercontent.com/u/55776421?v=4" width="150" height="150"/>|
 |:-:|:-:|:-:|:-:|
 |이은준<br/>[@2EunJun](https://github.com/adf123124)|[@andytjdqls](https://github.com/andytjdqls)|@eundeom<br/>[@eundeom](https://github.com/eundeom)|SeulGi_LEE<br/>[@seulg2027](https://github.com/seulg2027)|
-
-### ✏ Git 규칙
-<div><pre><ul>
-        Feat ➕ : 새로운 기능을 추가할 경우
-        Fix 🛠️ : 버그를 고친 경우
-        Design 🎨 : CSS 등 사용자 UI 디자인 변경
-        Change 💎 : 커다란 API 변경의 경우
-        Style 👕 : 코드 포맷 변경, 세미 콜론 누락, 코드 수정이 없는 경우
-        Hotfix 🚨 : 급하게 치명적인 버그를 고쳐야 하는 경우
-        Refactor 🚧 : 프로덕션 코드 리팩토링
-        Comment ✉️ : 필요한 주석 추가 및 변경
-        Docs 📝 : 문서를 수정한 경우
-        Test 🔍 : 테스트 추가, 테스트 리팩토링 (프로덕션 코드 변경 X)
-        Chore 🚀 : 빌드 테스트 업데이트, 패키지 매니저를 설정하는 경우
-        Rename 📁 : 파일 혹은 폴더 명을 옮기는 작업만인 경우
-        Remove ❌ : 파일을 삭제하는 작업만 수행한 경우
-        Release 👏 : 프로젝트 배포할 경우
-    </ul></pre></div>
-<br>
 
 ## 👝 프로젝트 : 42가 좋아지길 바래
 | MVC 패턴의 구조와 생성에 대한 연습과 협업을 위한 미니 프로젝트
@@ -65,7 +63,8 @@ Oracle DB는 방대한 카드 소비 데이터와 같은 구조적이고 복잡�
 <br><br>
 ### ⚙ 프로젝트 MVC 패턴 구조도
 ---
-![구조도](https://github.com/user-attachments/assets/bc08c783-1855-4d8c-800c-476dab62d890)
+![image](https://github.com/user-attachments/assets/847b0f20-16a8-4bbb-8138-9ec3c49d71c2)
+
 
 <br><br>
 ### 📃 API 명세서
@@ -83,15 +82,21 @@ http://127.0.0.1:1521/api/create
 
 ### 🔧 기능 설명 [수정]
 ---
-- 실행방법:
-          1.
-          2. 
-  
-- CRUD
-  - Create
-  - Read
-  - Update
-  - Delete
+|    조회   |
+| :-------: |
+| 결과이미지   |
+
+|      industry별 조회     |
+| :-------: |
+| 결과이미지   |
+
+|     삭제      |
+| :-------: |
+| 결과이미지   |
+
+|       생성    |
+| :-------: |
+| 결과이미지   |
 
 ### 🔗 사용스택
 ---
@@ -262,8 +267,8 @@ DB 서버를 다룰 때 처음 보는 에러를 마주쳤는데, 관련 설정�
 <pre>
 <b>이성빈</b>
 <br>
-<b>기술적 성과</b>
-Spring MVC와 Oracle DB를 활용한 실전 경험을 통해 백엔드 개발 역량을 강화함.
+<b>성과</b>
+Spring MVC와 Oracle DB를 활용한 실전 경험을 통해 인프라 구축 및 개발 역량을 강화함.
 Git 명령어 활용과 체계적인 Commit Message 작성의 중요성을 이해하고 정리하는 계기가 됨.
 <br>
 <b>배운점</b>
@@ -293,6 +298,24 @@ Git을 사용하면서 폴더 경로 지정 및 기본 사용에 아직 어려�
 
 ### ⏱ 코드 최적화 [작성중]
 <div><pre></pre></div>
+
+### ✏ Git 규칙
+<div><pre><ul>
+        Feat ➕ : 새로운 기능을 추가할 경우
+        Fix 🛠️ : 버그를 고친 경우
+        Design 🎨 : CSS 등 사용자 UI 디자인 변경
+        Change 💎 : 커다란 API 변경의 경우
+        Style 👕 : 코드 포맷 변경, 세미 콜론 누락, 코드 수정이 없는 경우
+        Hotfix 🚨 : 급하게 치명적인 버그를 고쳐야 하는 경우
+        Refactor 🚧 : 프로덕션 코드 리팩토링
+        Comment ✉️ : 필요한 주석 추가 및 변경
+        Docs 📝 : 문서를 수정한 경우
+        Test 🔍 : 테스트 추가, 테스트 리팩토링 (프로덕션 코드 변경 X)
+        Chore 🚀 : 빌드 테스트 업데이트, 패키지 매니저를 설정하는 경우
+        Rename 📁 : 파일 혹은 폴더 명을 옮기는 작업만인 경우
+        Remove ❌ : 파일을 삭제하는 작업만 수행한 경우
+        Release 👏 : 프로젝트 배포할 경우
+    </ul></pre></div>
 
 <br><br>
 ### 💡 1/3  미션
