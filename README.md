@@ -52,7 +52,7 @@ Oracle DB는 방대한 카드 소비 데이터와 같은 구조적이고 복잡�
   #### ❗ 문제 : ![image](https://github.com/user-attachments/assets/bfcc1070-b6c6-48ed-8f1e-b2be9e57be47)
   Oracle DB에서 프로세스 제한으로 인해 데이터 삽입 및 조회 실패
   #### 📢 해결 : 
-  `ALTER SYSTEM SET PROCESSES=200 SCOPE=spfile;` 명령어로 프로세스 제한 증가
+  `ALTER SYSTEM SET PROCESSES=200 SCOPE=spfile;` 명령어로 프로세스 제한 증가<br/>
   oracle 서버를 restart 하여 설정을 적용시킴
   #### 🎓 결과 및 교훈: 
   데이터베이스 설정과 리소스 관리의 중요성을 깨달음

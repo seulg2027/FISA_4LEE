@@ -40,7 +40,7 @@ public class ConsumeDAO {
     }
 
     // 'Read' 기능
-    public static List<ConsumeDTO> readAllRecords(Map<String, String> req) throws SQLException {
+    public static List<ConsumeDTO> readAllRecords(String params) throws SQLException {
         Connection con = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null;
@@ -48,17 +48,6 @@ public class ConsumeDAO {
 
         try {
             con = DriverUtil.getConnection();
-            
-            String params = "";
-            if (req.size() > 0) {
-            	params += "WHERE ";
-                for (String key: req.keySet()) {
-                	params += key + "=" + "\'";
-                	params += req.get(key) + "\' AND ";
-                }
-                params += "1=1";
-            }
-            
             String sql = "SELECT * FROM card_consume " + params;
             
             pstmt = con.prepareStatement(sql);
