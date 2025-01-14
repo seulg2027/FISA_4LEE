@@ -68,7 +68,7 @@ Oracle DB는 방대한 카드 소비 데이터와 같은 **구조적**이고 **�
 ---
   #### ❗ 문제  
   Oracle DB에서 프로세스 제한으로 인해 데이터 삽입 및 조회 실패
-  <br>
+  <br><br>
   ![image](https://github.com/user-attachments/assets/bfcc1070-b6c6-48ed-8f1e-b2be9e57be47)
   #### 📢 해결 
   `ALTER SYSTEM SET PROCESSES=200 SCOPE=spfile;` 명령어로 프로세스 제한 증가<br/>
@@ -115,10 +115,11 @@ http://127.0.0.1:1521/api/create
 
 ### [🔗 사용스택](#목차)
 ---
-| Front-end | Back-end |    IDE    |           |   협업툴  |           |           |
-| :-------: | :------: | :-------: | :-------: | :-------: | :-------: | :-------: |
-| React     | Java     | DBeaver   | STS       | Git       | Slack     | Figma     |
-| <div style="text-align: center;"><img src="https://github.com/user-attachments/assets/aff0f203-760b-4e70-a76b-de189a0c2a91" width="40" height="40"/></div> | <div style="text-align: center;"><img src="https://github.com/user-attachments/assets/51c9e7a6-8758-43c3-9c03-0329ed30f0c6" width="40" height="40"/></div> | <div style="text-align: center;"><img src="https://github.com/user-attachments/assets/7654a028-2074-428f-82ba-27132eba2d53" width="40" height="40"/></div> | <div style="text-align: center;"><img src="https://github.com/user-attachments/assets/8a003289-bc6f-487a-918b-1ad7826d9153" width="40" height="40"/></div> | <div style="text-align: center;"><img src="https://github.com/user-attachments/assets/71e1234d-9684-4c1e-8edb-de061dd036f0" width="40" height="40"/></div> | <div style="text-align: center;"><img src="https://github.com/user-attachments/assets/e70bf1c8-8dbc-46c1-a6a9-18d6d843cbdf" width="40" height="40"/></div> | <div style="text-align: center;"><img src="https://github.com/user-attachments/assets/1440eb75-bd80-4801-b45b-3e2a7a25b28f" width="40" height="40"/></div> |
+| Front-end | Back-end |  DB |  IDE    |           |   협업툴  |           |           | 
+| :-------: | :------: | :-------: | :-------: | :-------: | :-------: | :-------: |:-------: |
+| React     | Java     | Oracle | DBeaver   | STS       | Git       | Slack     | Figma     | 
+| <div style="text-align: center;"><img src="https://github.com/user-attachments/assets/aff0f203-760b-4e70-a76b-de189a0c2a91" width="40" height="40"/></div> | <div style="text-align: center;"><img src="https://github.com/user-attachments/assets/51c9e7a6-8758-43c3-9c03-0329ed30f0c6" width="40" height="40"/></div> |<div style="text-align: center;"><img src="https://github.com/user-attachments/assets/3af4c02f-fea5-422b-aede-7dbb496512ba" width="40" height="40"/></div> | <div style="text-align: center;"><img src="https://github.com/user-attachments/assets/7654a028-2074-428f-82ba-27132eba2d53" width="40" height="40"/></div> | <div style="text-align: center;"><img src="https://github.com/user-attachments/assets/8a003289-bc6f-487a-918b-1ad7826d9153" width="40" height="40"/></div> | <div style="text-align: center;"><img src="https://github.com/user-attachments/assets/71e1234d-9684-4c1e-8edb-de061dd036f0" width="40" height="40"/></div> | <div style="text-align: center;"><img src="https://github.com/user-attachments/assets/e70bf1c8-8dbc-46c1-a6a9-18d6d843cbdf" width="40" height="40"/></div> | <div style="text-align: center;"><img src="https://github.com/user-attachments/assets/1440eb75-bd80-4801-b45b-3e2a7a25b28f" width="40" height="40"/></div> | 
+
 
 <br>
 
