@@ -115,7 +115,7 @@ http://127.0.0.1:1521/api/create
 
 ### [🔗 사용스택](#목차)
 ---
-| Front-end | Back-end |  DB |  IDE    |           |   협업툴  |           |           | 
+| Front-end | Back-end |  DB |  IDE    |      IDE     |   협업툴  |     협업툴      |      협업툴     | 
 | :-------: | :------: | :-------: | :-------: | :-------: | :-------: | :-------: |:-------: |
 | React     | Java     | Oracle | DBeaver   | STS       | Git       | Slack     | Figma     | 
 | <div style="text-align: center;"><img src="https://github.com/user-attachments/assets/aff0f203-760b-4e70-a76b-de189a0c2a91" width="40" height="40"/></div> | <div style="text-align: center;"><img src="https://github.com/user-attachments/assets/51c9e7a6-8758-43c3-9c03-0329ed30f0c6" width="40" height="40"/></div> |<div style="text-align: center;"><img src="https://github.com/user-attachments/assets/3af4c02f-fea5-422b-aede-7dbb496512ba" width="40" height="40"/></div> | <div style="text-align: center;"><img src="https://github.com/user-attachments/assets/7654a028-2074-428f-82ba-27132eba2d53" width="40" height="40"/></div> | <div style="text-align: center;"><img src="https://github.com/user-attachments/assets/8a003289-bc6f-487a-918b-1ad7826d9153" width="40" height="40"/></div> | <div style="text-align: center;"><img src="https://github.com/user-attachments/assets/71e1234d-9684-4c1e-8edb-de061dd036f0" width="40" height="40"/></div> | <div style="text-align: center;"><img src="https://github.com/user-attachments/assets/e70bf1c8-8dbc-46c1-a6a9-18d6d843cbdf" width="40" height="40"/></div> | <div style="text-align: center;"><img src="https://github.com/user-attachments/assets/1440eb75-bd80-4801-b45b-3e2a7a25b28f" width="40" height="40"/></div> | 
@@ -366,7 +366,7 @@ Spring 코드 작성에 대한 이해도가 높아졌으며, Git 사용에 익�
 
 #### 3. Controller 예외 핸들링 중복 로직 분리
 
-|    수정 후   | 
+|    수정 전   | 
 | :-------: |
 | <img src="/img/before_update_controller.png" height="300"> |
 
@@ -375,7 +375,7 @@ Spring 코드 작성에 대한 이해도가 높아졌으며, Git 사용에 익�
 
 > Controller에서 중복되는 `try~catch` 코드를 사용하여, 가독성이 떨어지고 중복 코드 발생
 
-|    수정 전   |       수정 후     |
+|    수정 후   |       수정 후     |
 | :-------: | :-------: |
 | <img src="/img/after_update_controller.png" height="200"> | <img src="/img/after_update_exceptionhandler.png" height="120"> |
 
