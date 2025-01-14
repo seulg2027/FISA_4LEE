@@ -50,7 +50,7 @@
     - **중복 데이터의 저장을 피하고, 공백이나 특수 문자를 제거하기 위해** 정교한 전처리 과정을 수행해야 합니다.
 - 의미
   - 소비자들이 하루 중 어떤 시간대에 더 많은 카드를 사용하고 소비하는지를 분석하는 데이터로 시간대 별로 카드를 사용하는 패턴과 소비 트렌드를 분석하여, **소비 동향을 파악**하는 데 사용됩니다.
-- [출처](https://bigdata.seoul.go.kr/data/selectSampleData.do?r_id=P213&sample_data_seq=318)
+- [서울특별시 빅데이터 캠퍼스 - 서울 시민의 업종별 카드소비 패턴 데이터 (집계구별 일별 시간대별 카드소비패턴](https://bigdata.seoul.go.kr/data/selectSampleData.do?r_id=P213&sample_data_seq=318)
 
 #### <b>∘ RDBMS Oracle DB를 선택한 이유 </b><br>
 Oracle DB는 방대한 카드 소비 데이터와 같은 **구조적**이고 **복잡한 데이터**를 **안정적**으로 **저장하고 조회**할 수 있는 기능을 제공합니다.
@@ -79,7 +79,7 @@ Oracle DB는 방대한 카드 소비 데이터와 같은 **구조적**이고 **�
 <br><br>
 ### [⚙ 프로젝트 MVC 패턴 구조도](#목차)
 ---
-![image](https://github.com/user-attachments/assets/847b0f20-16a8-4bbb-8138-9ec3c49d71c2)
+![image (1)](https://github.com/user-attachments/assets/75cb21c0-e4a5-414f-b95a-19f30b339737)
 
 
 <br><br>
@@ -131,6 +131,10 @@ http://127.0.0.1:1521/api/create
 
 ## ERD
 <br>
+
+**card_consume 테이블**은 카드 이용 데이터를 저장합니다. 
+<br>
+업종, 거래 날짜, 이용 금액, 시간대, 이용 횟수, 등록 날짜를 포함하며 각 레코드는 고유한 ID로 식별됩니다. 
 
 <img src="https://github.com/user-attachments/assets/f973fd7c-0bdf-493f-8af7-2b54dab5f179" width="300" />
 
@@ -333,8 +337,12 @@ Spring 코드 작성에 대한 이해도가 높아졌으며, Git 사용에 익�
 ### [⏱ 코드 최적화](#목차)
 #### 1. DAO (create) 의미 명확성 부족 ,확장성 부족<br/>
 
-<img src="https://github.com/user-attachments/assets/9a6e8410-8987-4c0d-b080-c2f846b95b20" width="370">
-<img src="https://github.com/user-attachments/assets/5c0d6fd1-56e6-4eb7-970b-5c64a8918abc" width="370">
+
+|    수정 전   |       수정 후     |
+| :-------: | :-------: |
+| <img src="https://github.com/user-attachments/assets/9a6e8410-8987-4c0d-b080-c2f846b95b20" width="370"> | <img src="https://github.com/user-attachments/assets/5c0d6fd1-56e6-4eb7-970b-5c64a8918abc" width="370"> |
+
+
 
 <br>
 
@@ -344,7 +352,11 @@ Spring 코드 작성에 대한 이해도가 높아졌으며, Git 사용에 익�
 
 #### 2. DAO (read) 코드의 맥락과 변수를 어디에서 초기화하는지 고려<br/>
 
-<img src="https://github.com/user-attachments/assets/d4740e64-3100-425b-a1af-b00646d11e72" width="350"> <img src="/img/해결-b.png" width="370">
+|    수정 전   |       수정 후     |
+| :-------: | :-------: |
+| <img src="https://github.com/user-attachments/assets/d4740e64-3100-425b-a1af-b00646d11e72" width="350"> | <img src="/img/해결-b.png" width="370"> |
+
+
 
 <br>
 
@@ -354,12 +366,19 @@ Spring 코드 작성에 대한 이해도가 높아졌으며, Git 사용에 익�
 
 #### 3. Controller 예외 핸들링 중복 로직 분리
 
-<img src="/img/before_update_controller.png" height="300">
+|    수정 후   | 
+| :-------: |
+| <img src="/img/before_update_controller.png" height="300"> |
+
+
+
 
 > Controller에서 중복되는 `try~catch` 코드를 사용하여, 가독성이 떨어지고 중복 코드 발생
 
-<img src="/img/after_update_controller.png" height="200">
-<img src="/img/after_update_exceptionhandler.png" height="120">
+|    수정 전   |       수정 후     |
+| :-------: | :-------: |
+| <img src="/img/after_update_controller.png" height="200"> | <img src="/img/after_update_exceptionhandler.png" height="120"> |
+
 
 > @ExceptionHandler 를 통해 예외를 처리하는 로직을 분리 **가독성이 향상되고, 중복 코드를 줄여서** 코드를 최적화
 
